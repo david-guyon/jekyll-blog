@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Blog de David Guyon</title>
+ <link href="http://dgetux.github.com/atom.xml" rel="self"/>
+ <link href="http://dgetux.github.com"/>
+ <updated>2012-09-02T11:41:18+02:00</updated>
+ <id>http://dgetux.github.com</id>
+ <author>
+   <name>David Guyon</name>
+   <email>davidguyon49@gmail.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>My First Post</title>
+   <link href="http://dgetux.github.com/2012/09/01/my-first-post"/>
+   <updated>2012-09-01T00:00:00+02:00</updated>
+   <id>http://dgetux.github.com/2012/09/01/my-first-post</id>
+   <content type="html">&lt;p&gt;Hi all, it&amp;#8217;s my first post so.. be understandable that it&amp;#8217;s not really interesting!&lt;/p&gt;</content>
+ </entry>
+ 
+ 
+</feed>
