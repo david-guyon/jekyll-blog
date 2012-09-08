@@ -15,7 +15,9 @@ Pour plus d'informations sur ce mec, va sur la page [About David](about.html)
 
 ## Dernier Article
 
-{% assign lastPost = site.posts | last %}
+{% assign lastPost = site.posts.first %}
 ### {{ lastPost.title }} - *{{ lastPost.date | date_to_string }}*
-{{ lastPost.content }}
-
+{{ lastPost.content | split:'<!-- break -->' | first }}
+{% if lastPost.content contains '<!-- break -->' %}
+  [Lire la suite...]({{lastPost.url }})
+{% endif %}

@@ -14,6 +14,8 @@ L’auberge est le [Caledonian Backpackers](http://caledonianbackpackers.com/). 
 
 Je vais essayer de vous y lister tous les avantages :
 
+<!-- break -->
+
 - Chambre de 6, 12 et 36 personnes pour un prix d’environ £14/day, c’est cheap!
 - Un casier personnel de rangement pour chaque lit sous cadenas
 - De nombreuses toilettes et salles de bain très propres
@@ -33,7 +35,7 @@ Je vais essayer de vous y lister tous les avantages :
 
 J’oublie probablement plein de chose mais je vais m’arrêter la et vous balancer des photos (ça sera mieux que trop de mots).
 
-<img src="{{BASE_PATH}}/data/CaledonianCucumberRoom.jpg" alt="Salle de repos ou « Cucumber Room »" style="display: inline-block; margin: 8px;" width="250px" />
+<img src="{{BASE_PATH}}/data/CaledonianCucumberRoom.jpg" alt="Salle de repos ou Cucumber Room" style="display: inline-block; margin: 8px;" width="250px" />
 <img src="{{BASE_PATH}}/data/Caledoniantotoro.jpg" alt="Oh Totoro est parmi nous !" style="display: inline-block; margin: 8px;" width="250px" />
 <img src="{{BASE_PATH}}/data/CaledonianEscalier.jpg" alt="Aperçu de la grandeur du batiment" style="display: inline-block; margin: 8px;" width="250px" />
 <img src="{{BASE_PATH}}/data/CaledonianCouloir.jpg" alt="Le couloir menant à la salle de repos, de vie et de bouffe" style="display: inline-block; margin: 8px;" width="250px" />

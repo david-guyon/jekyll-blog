@@ -3,7 +3,7 @@
 permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-auto: false 
+auto: true 
 safe: true
 lsi: false
 pygments: true
@@ -22,7 +22,7 @@ author :
   lastfm : misterchimiz
   website : 
     url : http://www.songaccoustic.fr
-    name: songaccoustic
+    name: SongAccoustic
     present : true
 
 # The production_url is only used when full-domain names are needed
