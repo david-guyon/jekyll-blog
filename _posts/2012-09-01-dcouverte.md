@@ -2,7 +2,7 @@
 layout: post
 title: "Découverte"
 description: ""
-category: 
+category: Général 
 tags: []
 ---
 {% include JB/setup %}

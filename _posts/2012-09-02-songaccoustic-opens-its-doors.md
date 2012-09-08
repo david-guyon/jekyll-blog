@@ -2,7 +2,7 @@
 layout: post
 title: "SongAccoustic opens its doors"
 description: ""
-category: 
+category: SongAccoustic 
 tags: []
 ---
 {% include JB/setup %}

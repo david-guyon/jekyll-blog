@@ -2,7 +2,7 @@
 layout: post
 title: "Let's talk about the Caledonian Backpackers"
 description: ""
-category: 
+category: Ecosse
 tags: []
 ---
 {% include JB/setup %}

@@ -2,7 +2,7 @@
 layout: post
 title: "Comment partir étudier en Ecosse"
 description: ""
-category: 
+category: Ecosse 
 tags: []
 ---
 {% include JB/setup %}

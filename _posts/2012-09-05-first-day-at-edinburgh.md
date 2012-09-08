@@ -2,7 +2,7 @@
 layout: post
 title: "First day at Edinburgh"
 description: ""
-category: 
+category: Ecosse 
 tags: []
 ---
 {% include JB/setup %}
