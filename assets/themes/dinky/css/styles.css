@@ -11,6 +11,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Junction';
+  src: url('../fonts/Junction-webfont.eot');
+  src: url('../fonts/Junction-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Junction-webfont.woff') format('woff'),
+       url('../fonts/Junction-webfont.ttf') format('truetype'),
+       url('../fonts/Junction-webfont.svg#junctionregularRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* MeyerWeb Reset */
 
 html, body, div, span, applet, object, iframe,
@@ -38,8 +49,8 @@ time, mark, audio, video {
 
 body {
   padding:10px 50px 0 0;
-  font-family: "ExistenceLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 16px;
+  font-family: "Junction", Arial, sans-serif;
+	font-size: 14px;
 	color: #232323;
 	background-color: #FBFAF7;
 	margin: 0;
@@ -177,7 +188,7 @@ img {
 /* Code blocks */
 
 code, pre {
-	font-family: Monaco, "ExistenceLight", "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+	font-family: "Junction", Terminal, monospace;
   font-size:14px;
 }
 
@@ -205,7 +216,7 @@ table {
  }
 
 th {
-  font-family: "ExistenceLight", 'Arvo', Helvetica, Arial, sans-serif;
+  font-family: "Junction", Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-weight: normal;
   padding: 10px;
@@ -256,7 +267,7 @@ header h4 {
 p.header {
 	font-size: 16px;
   font-style: italic; 
-  padding-left: 60px;
+  padding-left: 50px;
 }
 
 h1.header {
@@ -309,6 +320,7 @@ header li {
 }
 
 header li a {
+  color: #C0C0C0;
   padding-left: 0px;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -318,6 +330,7 @@ header li a {
 }
 
 header li:hover a {
+  color: #FFF;
   padding-left: 20px;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;

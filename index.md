@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Page d'Accueil 
+comments: false
 tagline: 
 ---
 {% include JB/setup %}
