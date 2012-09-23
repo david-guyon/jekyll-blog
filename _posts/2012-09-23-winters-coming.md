@@ -9,7 +9,7 @@ tags: []
 
 Je savais que ça arriverai tôt mais tout de même... on est encore au mois de Septembre ! 
 
-Pas d'inquiétude, il ne neige pas encore et il m'arrive encore de sortir me promener sans manteau. Par contre on sent que l'hivers approche dans les magasins. Cet après-midi, je faisais les magasins de fringues (oui, tout est ouvert le Dimanche ici) et j'ai été très étonné de voir des rayons entier de manteaux d'hivers, de gants, de bonnets, d'écharpes, de gratoir pour le givre sur les voitures et des sortes de semelle qui ajoutent des crampons aux chaussures... Des ajouts de crampons pour les chaussures ? La je m'inquiète. **C'est quoi l'hivers en Ecosse ?!** 
+Pas d'inquiétude, il ne neige pas encore et il m'arrive encore de sortir me promener sans manteau. Par contre on sent que l'hivers approche dans les magasins. Cet après-midi, je faisais les magasins de fringues (oui, tout est ouvert le Dimanche ici) et j'ai été très étonné de voir des rayons entier de manteaux d'hivers, de gants, de bonnets, d'écharpes, de grattoir pour le givre sur les voitures et des sortes de semelle qui ajoutent des crampons aux chaussures... Des ajouts de crampons pour les chaussures ? La je m'inquiète. **C'est quoi l'hivers en Ecosse ?!** 
 
 Bon je vous parle de ça, c'est surtout pour faire l'introduction et pour trouver un titre cool pour mon article ;). 
 
