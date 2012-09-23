@@ -105,7 +105,9 @@ h4 {
 
 h5, h6 {
 	font-family: "ExistenceLight", 'Arvo', Monaco, serif;
-	font-weight: 700;
+  font-weight: bold;
+  font-size: 15px;
+  color: #2E9538;
 }
 
 a {

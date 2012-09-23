@@ -51,9 +51,50 @@ A force de recevoir des lettres et emails de leur part, tu sauras tout ce qu’i
 
 Tu devras te trouver un « *Garant* » qui sera la personne chargée de te payer tes frais de logement si tu n’y arrives pas. Courrier à renvoyer par la poste avec un délais précis. Fait y attention si tu ne veux pas ralentir la procédure et peut être perdre ton logement.
 
-Pour finir, une chose importante est de s’inscrire sur le site du [SAAS](https://www.saas.gov.uk/). C’est eux qui vont te payer tes frais d’inscription. **IL FAUT LE FAIRE TÔT** ! Renseigne toi de la date butoire (moi c’était avant le 30 juin). Après cette date, tu passeras en liste d’attente et la procédure sera bien plus longue. Fait y attention. Pour mon cas, je n’ai pas été assez renseigné et les procédures ont étés plus longue.
-
+Pour finir, une chose importante est de s’inscrire sur le site du [SAAS](https://www.saas.gov.uk/). C’est eux qui vont te payer tes frais d’inscription. **IL FAUT LE FAIRE TÔT** ! Renseigne toi de la date butoire (moi c’était avant le 30 juin). Après cette date, tu passeras en liste d’attente et la procédure sera bien plus longue. Fait y attention. Pour mon cas, je n’ai pas été assez renseigné et les procédures ont étés plus longue. Si tu fais ta demande dans les bons délais, tu devrais avoir une réponse courant Juillet/Août. Pour mon cas j'ai eu la réponse début Septembre. Les cours commençaient juste. Ce n'est pas dramatique, ils sont habitués. Il suffit juste de leur transmettre les documents du SAAS dès que possible. 
 
 <img src="{{BASE_PATH}}/data/Napier.jpg" alt="Photo du campus Craiglockhart" style="display: block; margin-right: auto; margin-left: auto;" />
 
-*Pour le moment, je met en ligne l’article tel quel. Il subira probablement de nombreuses corrections et modification/ajout car seul je n’arrive pas à tout me souvenir.*
+####Une fois sur place
+
+Tu as réussi la partie administrative, tu as même trouvé un vol cheap pour aller à Edimbourg. **Félicitation**, le plus dur et le plus ennuyant est fait. A présent tu vas pouvoir commencer à te rendre compte que tu n'as pas fait tout ça pour rien ! 
+
+*"Je ne sais pas trop comment m'y prendre pour la suite de cet article. Je pense que je vais lister ce que moi j'ai fait en arrivant à Edimbourg."*
+
+#####L'Emploi du temps
+
+Quand tu vas connaitre ton emploi du temps pour la première fois, tu vas probablement être choqué. On m'avait prévenu mais je m'attendai pas à ça. J'ai environ 14h de cours par semaine et j'ai un weekend de 4 jours. 
+Je ne te cache donc pas qu'ils attendent de toi un travail personnel immense (c'est la méthode à l'anglaise, renseigne toi avant si tu ne connais pas). 
+Donc tu auras beaucoup de temps libre. 
+
+Pourquoi pas essayer de trouver un petit travail étudiant ? Ca te permettra de rentabiliser les nombreuses pintes achetées dans les Pub ! 
+Quelques règles pour pouvoir travailler : 
+
+#####Demander un Nationnal Insurance Number (NIN)
+
+C'est un numéro qui te permet de travailler en Ecosse et te permet d'avoir certaines couvertures/aides en cas de problème. Je suis pas très sur de moi mais ce qui est certain c'est que si tu souhaites avoir un travail étudiant durant la semaine/weekend, tu auras besoin de ce numéro. 
+
+Pour l'avoir, rien de plus simple. Tu les appels, ils vont te demander tes origines, où tu vies et pourquoi tu veux ce numéro. Ensuite ils vont te donner une horaire de rendez vous. Tu te pointes au rendez vous et ... (mon rendez vous est le 11 octobre donc je laisse cette partie en stand by car je ne connais pas encore la suite ;) ).
+
+#####Bank Account
+
+Avant de partir, je suis allé me renseigner à ma banque s'ils avaient une offre adaptée à mon projet. Ils m'ont proposé de passer sur une carte Premier/Gold qui me permet de payer avec ma carte partout en Europe sans avoir des taxes énormes (sauf en retrait liquide, c'est bien surtaxé). J'avoue être passé sur cette offre car il y avait une offre étudiante et qu'elle me coûte presque rien. 
+
+Le problème est que si je veux travailler, le versement du salaire se fait sur un compte UK. Ils ne peuvent pas transférer l'argent sur un compte à l'étranger. J'ai donc été me créer un nouveau compte à la banque Barclays. C'est très simple, c'est gratuit et le personnel est habitué et met à l'aise. Je te laisse découvrir la procédure par toi même, mais pas d'inquiétude. Je me rappel avoir plus parlé du fromage et du vin rouge Français que du compte bancaire ! 
+
+En plus de servir pour le versement de ma paie, ce compte me permet de retirer en cash sans payer de taxe contrairement à ma carte Française. 
+
+#####Téléphone portable
+
+Tu vas te rendre compte que ton numéro de portable Français est pas aimé en Ecosse. Déjà tu payes plus cher suivant ton offre mobile (pour mon cas 10cent/SMS et 40cent/min) et tout ce qui est administratif **ne veulent pas** de ton numéro car ils refusent d'appeler à l'étranger. 
+
+Voici comment j'ai fait (je vais faire...) : Mon abonnement se termine en Novembre, je vais fermer ma ligne chez Bouygue Telecom pour passer sur un forfait FreeMobil à 2€/mois juste pour garder mon numéro. Et je vais ouvrir une ligne en Ecosse pour environ £10/mois. Donc récapitulons : je payais environ 24€/mois, je passe à environ 14€/mois, je suis gagnant ;). 
+
+Je mettrai à jour cette partie quand ça sera véritable fait. 
+
+#####Médecin Généraliste
+
+En Ecosse, ils appellent ça un GP (General Practice). La question de *"Faut il en avoir un ?"* ne se pose pas. **Il faut !** Certains prennent le risque de ne pas le faire. Etant donné que l'on sait pas ce qu'il peut nous arriver, il est fortement déconseillé et stupide de ne pas le faire. Pour en avoir un, il suffit de remplir une feuille et de la rendre à la personne concernée (pour mon cas c'était un cabinet à 200m de mon logement). Tu n'as rien à payer, pas de rendez vous à prendre. Juste à remplir correctement cette feuille et te voila couvert par un GP ! 
+
+
+*"Bientôt une nouvelle mise à jour de cet article. J'attend d'avoir eu mon NIN et trouvé un travail. Si vous avez des remarques à faire ou simplement me signaler des fautes d'orthographe, don't be shy !"*
