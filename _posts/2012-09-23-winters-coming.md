@@ -28,4 +28,7 @@ Une de mes colocatrices est Finlandaise. Elle est adorable comme tout et prend s
 
 Sinon je passe de nombreux après-midi à me balader dans Edimbourg avec cette nouvelle petite bande. Je commence à bien connaitre **Arthur's Seat** (petite pensée pour GuiPomme : *"j'en profite à fond de cette montagne"*). Et malgré ce vent froid, la ville est toujours autant magnifique. Je ne m'en lasse pas ! 
 
-Je ne vois pas quoi ajouter de plus pour le moment (et pourtant j'ai des choses à dire), je vais donc laisser l'article tel quel et ajouter une petite photo pour décorer ASAP (le plus tôt possible). 
+Je ne vois pas quoi ajouter de plus pour le moment (et pourtant j'ai des choses à dire), je vous laisse donc sur cette photo finale. C'était mon premier jour à l'appartement. Moi et Noora, ma Finlandaise, sommes aller faire des courses pour la première fois. J'ai été étonné par la taille de tout ce que l'on peut trouver. It's HUGE O_o ! 
+
+<img src="{{BASE_PATH}}/data/grosPaquetChips.jpg" alt="Un immense paquet de chips" style="display: block; margin-right: auto; margin-left: auto;" />
+
