@@ -6,7 +6,7 @@ category: SongAccoustic
 tags: []
 ---
 {% include JB/setup %}
-<img src="{{BASE_PATH}}/data/SALogo.png" alt="Logo SongAccoustic" style="float: right; margin-left: 20px;" />
+<img src="{{BASE_PATH}}/data/SALogo.png" title="Logo SongAccoustic" style="float: right; margin-left: 20px;" />
 
 Dans la page [About David](about.md), je vous avais signalé que je donnerai quelques informations sur [SongAccoustic](http://www.songaccoustic.fr) et bien les voici !
 

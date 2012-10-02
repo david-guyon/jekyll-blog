@@ -29,7 +29,7 @@ in Scotland
 
 …en tant qu’étudiant Européen sans programme.
 
-<img src="{{BASE_PATH}}/data/NapierLogo.jpg" alt="Logo de l’université Napier" style="display: block; margin-right: auto; margin-left: auto;" width="300px" />
+<img src="{{BASE_PATH}}/data/NapierLogo.jpg" title="Logo de l’université Napier" style="display: block; margin-right: auto; margin-left: auto;" width="300px" />
 
 Maintenant que les présentations sont faites, je vais vous expliquer la procédure pour y arriver.
 
@@ -53,7 +53,7 @@ Tu devras te trouver un « *Garant* » qui sera la personne chargée de te payer
 
 Pour finir, une chose importante est de s’inscrire sur le site du [SAAS](https://www.saas.gov.uk/). C’est eux qui vont te payer tes frais d’inscription. **IL FAUT LE FAIRE TÔT** ! Renseigne toi de la date butoire (moi c’était avant le 30 juin). Après cette date, tu passeras en liste d’attente et la procédure sera bien plus longue. Fait y attention. Pour mon cas, je n’ai pas été assez renseigné et les procédures ont étés plus longue. Si tu fais ta demande dans les bons délais, tu devrais avoir une réponse courant Juillet/Août. Pour mon cas j'ai eu la réponse début Septembre. Les cours commençaient juste. Ce n'est pas dramatique, ils sont habitués. Il suffit juste de leur transmettre les documents du SAAS dès que possible. 
 
-<img src="{{BASE_PATH}}/data/Napier.jpg" alt="Photo du campus Craiglockhart" style="display: block; margin-right: auto; margin-left: auto;" />
+<img src="{{BASE_PATH}}/data/Napier.jpg" title="Photo du campus Craiglockhart" style="display: block; margin-right: auto; margin-left: auto;" />
 
 ####Une fois sur place
 

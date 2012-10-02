@@ -35,10 +35,10 @@ Je vais essayer de vous y lister tous les avantages :
 
 J’oublie probablement plein de chose mais je vais m’arrêter la et vous balancer des photos (ça sera mieux que trop de mots).
 
-<img src="{{BASE_PATH}}/data/CaledonianCucumberRoom.jpg" alt="Salle de repos ou Cucumber Room" style="display: inline-block; margin: 8px;" width="250px" />
-<img src="{{BASE_PATH}}/data/Caledoniantotoro.jpg" alt="Oh Totoro est parmi nous !" style="display: inline-block; margin: 8px;" width="250px" />
-<img src="{{BASE_PATH}}/data/CaledonianEscalier.jpg" alt="Aperçu de la grandeur du batiment" style="display: inline-block; margin: 8px;" width="250px" />
-<img src="{{BASE_PATH}}/data/CaledonianCouloir.jpg" alt="Le couloir menant à la salle de repos, de vie et de bouffe" style="display: inline-block; margin: 8px;" width="250px" />
-<img src="{{BASE_PATH}}/data/CaledonianCouloirJaune.jpg" alt="Tous les murs du batiment sont peints" style="display: inline-block; margin: 8px;" width="250px" />
-<img src="{{BASE_PATH}}/data/CaledonianCouloirRose.jpg" alt="Partout il y a des affiches pour nous guider" style="display: inline-block; margin: 8px;" width="250px" />
-<img src="{{BASE_PATH}}/data/CaledonianPeinture.jpg" alt="Une belle et drôle de peinture, on dirait Jack !" style="display: inline-block; margin: 8px;" width="530px" />
+<img src="{{BASE_PATH}}/data/CaledonianCucumberRoom.jpg" title="Salle de repos ou Cucumber Room" style="display: inline-block; margin: 8px;" width="250px" />
+<img src="{{BASE_PATH}}/data/Caledoniantotoro.jpg" title="Oh Totoro est parmi nous !" style="display: inline-block; margin: 8px;" width="250px" />
+<img src="{{BASE_PATH}}/data/CaledonianEscalier.jpg" title="Aperçu de la grandeur du batiment" style="display: inline-block; margin: 8px;" width="250px" />
+<img src="{{BASE_PATH}}/data/CaledonianCouloir.jpg" title="Le couloir menant à la salle de repos, de vie et de bouffe" style="display: inline-block; margin: 8px;" width="250px" />
+<img src="{{BASE_PATH}}/data/CaledonianCouloirJaune.jpg" title="Tous les murs du batiment sont peints" style="display: inline-block; margin: 8px;" width="250px" />
+<img src="{{BASE_PATH}}/data/CaledonianCouloirRose.jpg" title="Partout il y a des affiches pour nous guider" style="display: inline-block; margin: 8px;" width="250px" />
+<img src="{{BASE_PATH}}/data/CaledonianPeinture.jpg" title="Une belle et drôle de peinture, on dirait Jack !" style="display: inline-block; margin: 8px;" width="530px" />

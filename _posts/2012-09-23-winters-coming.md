@@ -30,5 +30,5 @@ Sinon je passe de nombreux après-midi à me balader dans Edimbourg avec cette n
 
 Je ne vois pas quoi ajouter de plus pour le moment (et pourtant j'ai des choses à dire), je vous laisse donc sur cette photo finale. C'était mon premier jour à l'appartement. Moi et Noora, ma Finlandaise, sommes aller faire des courses pour la première fois. J'ai été étonné par la taille de tout ce que l'on peut trouver. It's HUGE O_o ! 
 
-<img src="{{BASE_PATH}}/data/grosPaquetChips.jpg" alt="Un immense paquet de chips" style="display: block; margin-right: auto; margin-left: auto;" />
+<img src="{{BASE_PATH}}/data/grosPaquetChips.jpg" title="Un immense paquet de chips" style="display: block; margin-right: auto; margin-left: auto;" />
 
