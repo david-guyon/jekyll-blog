@@ -20,5 +20,5 @@ Pour plus d'informations sur ce mec, va sur la page [About David](about.html)
 ### {{ lastPost.title }} - *{{ lastPost.date | date_to_string }}*
 {{ lastPost.content | split:'<!-- break -->' | first }}
 {% if lastPost.content contains '<!-- break -->' %}
-  [Lire la suite...]({{lastPost.url }})
+  [Lire la suite...]({{lastPost.url }}/)
 {% endif %}
