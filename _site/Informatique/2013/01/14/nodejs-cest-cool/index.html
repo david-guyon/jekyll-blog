@@ -166,7 +166,13 @@
 
 <h5 id='a_quoi_sert_socketio_'>A quoi sert Socket.IO ?</h5>
 
-<p>Ce module permet de facilement implémenter un échange d&#8217;informations entre votre client et votre serveur sans avoir à rafraichir la page. On appel cela le <strong><a href='https://developer.mozilla.org/en-US/docs/WebSockets'>WebSocket</a></strong>. Je suppose qu&#8217;actuellement vous utilisez des requêtes AJAX. C&#8217;est la même chose à la différence que vous pourrez travailler avec des <em>socket.emit(&#8220;data&#8221;, monObjetJSON);</em> et des <em>socket.on(&#8220;data&#8221;,functionQuiFaitQuelqueChose(JSONObjet){});</em>.</p>
+<p>Ce module permet de facilement implémenter un échange d&#8217;informations entre votre client et votre serveur sans avoir à rafraichir la page. On appelle cela le <strong><a href='https://developer.mozilla.org/en-US/docs/WebSockets'>WebSocket</a></strong>. Je suppose qu&#8217;actuellement vous utilisez des requêtes AJAX. C&#8217;est la même chose à la différence que vous pourrez travailler des deux côtés (client et serveur) avec des :</p>
+
+<ul>
+<li><em>socket.emit(&#8220;data&#8221;, monObjetJSON);</em></li>
+
+<li><em>socket.on(&#8220;data&#8221;,functionQuiFaitQuelqueChose(JSONObjet){});</em></li>
+</ul>
 
 <h5 id='installation_et_utilisation_du_module'>Installation et utilisation du module</h5>
 

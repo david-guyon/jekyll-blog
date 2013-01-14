@@ -4,7 +4,7 @@
  <title>Mon Blog</title>
  <link href="http://dgetux.github.com/atom.xml" rel="self"/>
  <link href="http://dgetux.github.com"/>
- <updated>2013-01-14T16:17:50+01:00</updated>
+ <updated>2013-01-14T16:30:27+01:00</updated>
  <id>http://dgetux.github.com</id>
  <author>
    <name>David Guyon</name>
@@ -57,7 +57,13 @@
 
 &lt;h5 id='a_quoi_sert_socketio_'&gt;A quoi sert Socket.IO ?&lt;/h5&gt;
 
-&lt;p&gt;Ce module permet de facilement implémenter un échange d&amp;#8217;informations entre votre client et votre serveur sans avoir à rafraichir la page. On appel cela le &lt;strong&gt;&lt;a href='https://developer.mozilla.org/en-US/docs/WebSockets'&gt;WebSocket&lt;/a&gt;&lt;/strong&gt;. Je suppose qu&amp;#8217;actuellement vous utilisez des requêtes AJAX. C&amp;#8217;est la même chose à la différence que vous pourrez travailler avec des &lt;em&gt;socket.emit(&amp;#8220;data&amp;#8221;, monObjetJSON);&lt;/em&gt; et des &lt;em&gt;socket.on(&amp;#8220;data&amp;#8221;,functionQuiFaitQuelqueChose(JSONObjet){});&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Ce module permet de facilement implémenter un échange d&amp;#8217;informations entre votre client et votre serveur sans avoir à rafraichir la page. On appelle cela le &lt;strong&gt;&lt;a href='https://developer.mozilla.org/en-US/docs/WebSockets'&gt;WebSocket&lt;/a&gt;&lt;/strong&gt;. Je suppose qu&amp;#8217;actuellement vous utilisez des requêtes AJAX. C&amp;#8217;est la même chose à la différence que vous pourrez travailler des deux côtés (client et serveur) avec des :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;socket.emit(&amp;#8220;data&amp;#8221;, monObjetJSON);&lt;/em&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;em&gt;socket.on(&amp;#8220;data&amp;#8221;,functionQuiFaitQuelqueChose(JSONObjet){});&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h5 id='installation_et_utilisation_du_module'&gt;Installation et utilisation du module&lt;/h5&gt;
 

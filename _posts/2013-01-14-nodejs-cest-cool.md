@@ -54,7 +54,9 @@ Avec NodeJS, il est simple de travailler avec des modules. Je vais vous présent
 
 #####A quoi sert Socket.IO ?
 
-Ce module permet de facilement implémenter un échange d'informations entre votre client et votre serveur sans avoir à rafraichir la page. On appel cela le **[WebSocket](https://developer.mozilla.org/en-US/docs/WebSockets)**. Je suppose qu'actuellement vous utilisez des requêtes AJAX. C'est la même chose à la différence que vous pourrez travailler avec des *socket.emit("data", monObjetJSON);* et des *socket.on("data",functionQuiFaitQuelqueChose(JSONObjet){});*. 
+Ce module permet de facilement implémenter un échange d'informations entre votre client et votre serveur sans avoir à rafraichir la page. On appelle cela le **[WebSocket](https://developer.mozilla.org/en-US/docs/WebSockets)**. Je suppose qu'actuellement vous utilisez des requêtes AJAX. C'est la même chose à la différence que vous pourrez travailler des deux côtés (client et serveur) avec des : 
+- *socket.emit("data", monObjetJSON);*
+- *socket.on("data",functionQuiFaitQuelqueChose(JSONObjet){});*
 
 #####Installation et utilisation du module
 
