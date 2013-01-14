@@ -1,0 +1,10 @@
+
+http://dgetux.github.com/archive.html
+http://dgetux.github.com/index.html
+http://dgetux.github.com/pages.html
+http://dgetux.github.com/categories.html
+http://dgetux.github.com/tags.html
+http://dgetux.github.com/atom.xml
+http://dgetux.github.com/sitemap.txt
+
+http://dgetux.github.com/2012/09/01/my-first-post

@@ -1,0 +1,230 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="author" content="David Guyon" />
+    <title>NodeJS c'est cool</title>
+
+    <link rel="stylesheet" href="/assets/themes/dinky/css/styles.css">
+    <link rel="stylesheet" href="/assets/themes/dinky/css/pygment_trac.css">
+    <script src="/assets/themes/dinky/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="icon" type="image/png" href="/data/favicon.png" />
+
+    
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-123-12']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header"><a href="/">Mon Blog</a></h1>
+        <p class="header">Attention, David parle !</p>
+        <ul>
+          
+          
+          
+
+
+  
+    
+      
+      	
+      	<li><a href="/about.html">About David</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Anciens Articles</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+
+        </ul>
+        
+        
+        <div class="misc vcard">
+          <h4>about</h4>
+          <ul>
+            <!--
+            
+            <li class="contact"><address><span class="author fn n">David Guyon</span> - <span class="fn email">davidguyon49@gmail.com</span></address></li>
+            
+            -->
+            
+            <li class="website"><a href="http://www.songaccoustic.fr/" rel="me" style="font-weight: bold;" >SongAccoustic</a></li>
+            
+            
+            <li class="github"><a href="http://github.com/dgetux/" rel="me">github.com/dgetux</a></li>
+            
+            
+            <li class="twitter"><a href="http://twitter.com/dgetux/" rel="me">twitter.com/dgetux</a></li>
+            
+            
+            <li class="facebook"><a href="http://facebook.com/GuyonDavid/" rel="me">FB.com/GuyonDavid</a></li>
+            
+            
+            
+            
+            
+            <li class="lastfm"><a href="http://lastfm.fr/user/misterchimiz" rel="me">lastfm.fr/misterchimiz</a></li>
+            
+          </ul>
+        </div><!-- misc -->
+        
+      </header>
+
+      <section>
+      
+
+<section>
+  <h1>NodeJS c'est cool</h1>
+
+  <p>Et si je prenais le temps de vous présenter ce qui occupe mes journées en ce moment ? Let&#8217;s go, je vais vous présenter NodeJS.</p>
+<img src='/data/nodejs_logo.png' style='float: right; margin-left: 15px; margin-bottom: 15px;' title='Logo de NodeJS' />
+<h4 id='nodejs_cest_quoi_'>NodeJS c&#8217;est quoi ?</h4>
+
+<p>NodeJS c&#8217;est une application qui tourne côté serveur afin de gérer un site internet surtout côté serveur mais aussi côté client. C&#8217;est à dire que vous n&#8217;utiliserez plus de langage serveur tel que le PHP, vous utiliserez le <strong>JavaScript</strong> !</p>
+<!-- break -->
+<p>Le JavaScript va vous offrir de nombreux avantages qui seront peut être des inconvénients pour certain. Vous allez devoir créer le serveur web de toute pièce : configurer les options du serveur, gérer les requêtes envoyées par le client et envoyer au client les informations dont il a besoin.</p>
+
+<p>Cette lourde tâche, de devoir créer le serveur de toute pièce, nous offre un avantage majeur. Le JavaScript étant un langage événementiel, il nous permet de créer des sites internet très rapide car il n&#8217;y a pas de code bloquant. Un exemple pour bien comprendre l&#8217;idée : Quand vous allez chercher des données dans une base de données, vous utilisez du code bloquant. Le serveur ne peut rien faire d&#8217;autre pendant ce temps. Avec une <strong>fonction de callback</strong>, nous pouvons nous décharger de ce travail de recherche et la donner à une tâche qui tourne en fond. Pendant qu&#8217;elle réalise son travail, nous pouvons faire autre chose, tel que s&#8217;occuper d&#8217;un nouveau client qui vient de se connecter.</p>
+
+<p>Il y a de nombreuses descriptions sur internet qui sont plus complètes que la mienne et je vous invite à aller les lires. Il y a ce <a href='http://nodejs.developpez.com/tutoriels/javascript/node-js-livre-debutant/'>Livre du Débutant</a>, avec sa version PDF, qui m&#8217;a permis d&#8217;en apprendre beaucoup sur NodeJS.</p>
+
+<h4 id='avant_de_commencer'>Avant de commencer</h4>
+
+<p>Je ne vais pas vous présenter en détail comment programmer en utilisant NodeJS. Je vais plutôt vous rediriger vers les pages qui m&#8217;ont permis d&#8217;apprendre comment faire en y ajoutant les conseils que j&#8217;aurai aimé avoir quand j&#8217;étais à votre place.</p>
+
+<h4 id='on_commence_quand_'>On commence quand ?</h4>
+
+<p>Déjà vous allez devoir l&#8217;installer. Vous trouverez sur internet de nombreux sites qui l&#8217;explique. En général l&#8217;installation est très simple. De plus si vous travaillez sous Ubuntu ou sous ArchLinux, NodeJS est dans les dépôts. Un simple <em>sudo apt-get install nodejs</em> sous Ubuntu ou un <em>yaourt -S nodejs</em> sous ArchLinux vous installera votre précieux.</p>
+
+<p>Maintenant que vous avez NodeJS, commençont par une application simple.</p>
+
+<h5 id='hello_world'>Hello World!</h5>
+
+<p>Le meilleur moyen de vraiment se rendre compte de l&#8217;intérêt de NodeJS, c&#8217;est de faire une mini application &#8220;Hello World&#8221; avec un appel de fonction en callback.</p>
+
+<p>Je vous conseil donc de faire un fichier server.js et d&#8217;y écrire le code suivant :</p>
+
+<p><em>setTimeout(function(){console.log(&#8220;World&#8221;);}, 1000);</em><br /> <em>console.log(&#8220;Hello &#8220;);</em></p>
+
+<p>Lancer votre serveur à l&#8217;aide de la ligne de commande <em>node server.js</em> et vous devriez voir apparaitre dans votre console &#8220;Hello&#8221; et une seconde après &#8220;World&#8221;. Ce qui est important à comprendre c&#8217;est que durant la seconde d&#8217;attente, nous pouvons faire autre chose. On appel cela du &#8220;Non blocking code&#8221; et c&#8217;est un des principaux avantages de NodeJS.</p>
+
+<p>Si vous ne comprennez pas cet exemple, je vous conseil vivement de lire quelques tutoriels sur les bases du JavaScript.</p>
+
+<h4 id='les_modules_complmentaires'>Les modules complémentaires</h4>
+
+<p>Avec NodeJS, il est simple de travailler avec des modules. Je vais vous présenter tout ça en vous expliquant comment utiliser mon préféré, <a href='http://socket.io/'>Socket.IO</a>.</p>
+
+<h5 id='a_quoi_sert_socketio_'>A quoi sert Socket.IO ?</h5>
+
+<p>Ce module permet de facilement implémenter un échange d&#8217;informations entre votre client et votre serveur sans avoir à rafraichir la page. Je suppose qu&#8217;actuellement vous utilisez des requêtes AJAX. C&#8217;est la même chose à la différence que vous pourrez travailler avec des <em>socket.emit(&#8220;data&#8221;, monObjetJSON);</em> et des <em>socket.on(&#8220;data&#8221;,functionQuiFaitQuelqueChose(JSONObjet){});</em>.</p>
+
+<h5 id='installation_et_utilisation_du_module'>Installation et utilisation du module</h5>
+
+<p>Dans un premier temps il faut installer <a href='https://npmjs.org/'>npm</a>. C&#8217;est un gestionnaire de modules pour NodeJS. Il permet de gérer l&#8217;installation et la désinstallation des modules très facilement.</p>
+
+<p>Après son installation vous pourrez utiliser ces lignes de commande :</p>
+
+<ul>
+<li>Pour installer Socket.IO : <em>npm install socket.io</em>.</li>
+
+<li>Pour désinstaller Socket.IO : <em>npm uninstall socket.io</em>.</li>
+
+<li>Pour voir les modules installés : <em>npm ls</em></li>
+</ul>
+
+<p>L&#8217;installation ne suffit pas pour pouvoir utiliser les méthodes de ce module. Au début de votre server.js, il faut ajouter une ligne : <em>var socketio = require(&#8220;socket.io&#8221;);</em>. Cette ligne réalise l&#8217;intégration du module au serveur tel un <em>#include &#8220;myLib.h&#8221;</em> en C.</p>
+
+<p>Pour découvrir comment l&#8217;utiliser, aller sur le site de <a href='http://socket.io/'>Socket.IO</a>. Je trouve son utilisation simple et indispensable pour faire un échange d&#8217;informations serveur/client.</p>
+
+<h4 id='ok_et_aprs_'>Ok et après ?</h4>
+
+<p>NodeJS est encore jeune et il y a beaucoup à y découvrir. Ce que je vous propose (pas vraiment une proposition en faite), c&#8217;est que je vais continuer ma découverte de NodeJS et réaliser un petit projet de jeu en ligne.</p>
+
+<p>Je vous invite à faire de même.</p>
+
+<p>Pas d&#8217;idée par où commencer ? Pourquoi ne pas faire un petit <a href='http://www.grafikart.fr/tutoriels/nodejs/nodejs-socketio-tchat-366'>Chat</a> en ligne (tutoriel bien fait je trouve).</p>
+
+  
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+    var disqus_shortname = 'dgetuxblog'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</section>
+
+
+      </section>
+
+      <footer>
+        <!-- EMPTY -->
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
+

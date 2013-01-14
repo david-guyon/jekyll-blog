@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Mon Blog</title>
+ <link href="http://dgetux.github.com/atom.xml" rel="self"/>
+ <link href="http://dgetux.github.com"/>
+ <updated>2013-01-14T14:26:03+01:00</updated>
+ <id>http://dgetux.github.com</id>
+ <author>
+   <name>David Guyon</name>
+   <email>davidguyon49@gmail.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>NodeJS c'est cool</title>
+   <link href="http://dgetux.github.com/Informatique/2013/01/14/nodejs-cest-cool"/>
+   <updated>2013-01-14T00:00:00+01:00</updated>
+   <id>http://dgetux.github.com/Informatique/2013/01/14/nodejs-cest-cool</id>
+   <content type="html">&lt;p&gt;Et si je prenais le temps de vous présenter ce qui occupe mes journées en ce moment ? Let&amp;#8217;s go, je vais vous présenter NodeJS.&lt;/p&gt;
+&lt;img src='/data/nodejs_logo.png' style='float: right; margin-left: 15px; margin-bottom: 15px;' title='Logo de NodeJS' /&gt;
+&lt;h4 id='nodejs_cest_quoi_'&gt;NodeJS c&amp;#8217;est quoi ?&lt;/h4&gt;
+
+&lt;p&gt;NodeJS c&amp;#8217;est une application qui tourne côté serveur afin de gérer un site internet surtout côté serveur mais aussi côté client. C&amp;#8217;est à dire que vous n&amp;#8217;utiliserez plus de langage serveur tel que le PHP, vous utiliserez le &lt;strong&gt;JavaScript&lt;/strong&gt; !&lt;/p&gt;
+&lt;!-- break --&gt;
+&lt;p&gt;Le JavaScript va vous offrir de nombreux avantages qui seront peut être des inconvénients pour certain. Vous allez devoir créer le serveur web de toute pièce : configurer les options du serveur, gérer les requêtes envoyées par le client et envoyer au client les informations dont il a besoin.&lt;/p&gt;
+
+&lt;p&gt;Cette lourde tâche, de devoir créer le serveur de toute pièce, nous offre un avantage majeur. Le JavaScript étant un langage événementiel, il nous permet de créer des sites internet très rapide car il n&amp;#8217;y a pas de code bloquant. Un exemple pour bien comprendre l&amp;#8217;idée : Quand vous allez chercher des données dans une base de données, vous utilisez du code bloquant. Le serveur ne peut rien faire d&amp;#8217;autre pendant ce temps. Avec une &lt;strong&gt;fonction de callback&lt;/strong&gt;, nous pouvons nous décharger de ce travail de recherche et la donner à une tâche qui tourne en fond. Pendant qu&amp;#8217;elle réalise son travail, nous pouvons faire autre chose, tel que s&amp;#8217;occuper d&amp;#8217;un nouveau client qui vient de se connecter.&lt;/p&gt;
+
+&lt;p&gt;Il y a de nombreuses descriptions sur internet qui sont plus complètes que la mienne et je vous invite à aller les lires. Il y a ce &lt;a href='http://nodejs.developpez.com/tutoriels/javascript/node-js-livre-debutant/'&gt;Livre du Débutant&lt;/a&gt;, avec sa version PDF, qui m&amp;#8217;a permis d&amp;#8217;en apprendre beaucoup sur NodeJS.&lt;/p&gt;
+
+&lt;h4 id='avant_de_commencer'&gt;Avant de commencer&lt;/h4&gt;
+
+&lt;p&gt;Je ne vais pas vous présenter en détail comment programmer en utilisant NodeJS. Je vais plutôt vous rediriger vers les pages qui m&amp;#8217;ont permis d&amp;#8217;apprendre comment faire en y ajoutant les conseils que j&amp;#8217;aurai aimé avoir quand j&amp;#8217;étais à votre place.&lt;/p&gt;
+
+&lt;h4 id='on_commence_quand_'&gt;On commence quand ?&lt;/h4&gt;
+
+&lt;p&gt;Déjà vous allez devoir l&amp;#8217;installer. Vous trouverez sur internet de nombreux sites qui l&amp;#8217;explique. En général l&amp;#8217;installation est très simple. De plus si vous travaillez sous Ubuntu ou sous ArchLinux, NodeJS est dans les dépôts. Un simple &lt;em&gt;sudo apt-get install nodejs&lt;/em&gt; sous Ubuntu ou un &lt;em&gt;yaourt -S nodejs&lt;/em&gt; sous ArchLinux vous installera votre précieux.&lt;/p&gt;
+
+&lt;p&gt;Maintenant que vous avez NodeJS, commençont par une application simple.&lt;/p&gt;
+
+&lt;h5 id='hello_world'&gt;Hello World!&lt;/h5&gt;
+
+&lt;p&gt;Le meilleur moyen de vraiment se rendre compte de l&amp;#8217;intérêt de NodeJS, c&amp;#8217;est de faire une mini application &amp;#8220;Hello World&amp;#8221; avec un appel de fonction en callback.&lt;/p&gt;
+
+&lt;p&gt;Je vous conseil donc de faire un fichier server.js et d&amp;#8217;y écrire le code suivant :&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;setTimeout(function(){console.log(&amp;#8220;World&amp;#8221;);}, 1000);&lt;/em&gt;&lt;br /&gt; &lt;em&gt;console.log(&amp;#8220;Hello &amp;#8220;);&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Lancer votre serveur à l&amp;#8217;aide de la ligne de commande &lt;em&gt;node server.js&lt;/em&gt; et vous devriez voir apparaitre dans votre console &amp;#8220;Hello&amp;#8221; et une seconde après &amp;#8220;World&amp;#8221;. Ce qui est important à comprendre c&amp;#8217;est que durant la seconde d&amp;#8217;attente, nous pouvons faire autre chose. On appel cela du &amp;#8220;Non blocking code&amp;#8221; et c&amp;#8217;est un des principaux avantages de NodeJS.&lt;/p&gt;
+
+&lt;p&gt;Si vous ne comprennez pas cet exemple, je vous conseil vivement de lire quelques tutoriels sur les bases du JavaScript.&lt;/p&gt;
+
+&lt;h4 id='les_modules_complmentaires'&gt;Les modules complémentaires&lt;/h4&gt;
+
+&lt;p&gt;Avec NodeJS, il est simple de travailler avec des modules. Je vais vous présenter tout ça en vous expliquant comment utiliser mon préféré, &lt;a href='http://socket.io/'&gt;Socket.IO&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h5 id='a_quoi_sert_socketio_'&gt;A quoi sert Socket.IO ?&lt;/h5&gt;
+
+&lt;p&gt;Ce module permet de facilement implémenter un échange d&amp;#8217;informations entre votre client et votre serveur sans avoir à rafraichir la page. Je suppose qu&amp;#8217;actuellement vous utilisez des requêtes AJAX. C&amp;#8217;est la même chose à la différence que vous pourrez travailler avec des &lt;em&gt;socket.emit(&amp;#8220;data&amp;#8221;, monObjetJSON);&lt;/em&gt; et des &lt;em&gt;socket.on(&amp;#8220;data&amp;#8221;,functionQuiFaitQuelqueChose(JSONObjet){});&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h5 id='installation_et_utilisation_du_module'&gt;Installation et utilisation du module&lt;/h5&gt;
+
+&lt;p&gt;Dans un premier temps il faut installer &lt;a href='https://npmjs.org/'&gt;npm&lt;/a&gt;. C&amp;#8217;est un gestionnaire de modules pour NodeJS. Il permet de gérer l&amp;#8217;installation et la désinstallation des modules très facilement.&lt;/p&gt;
+
+&lt;p&gt;Après son installation vous pourrez utiliser ces lignes de commande :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pour installer Socket.IO : &lt;em&gt;npm install socket.io&lt;/em&gt;.&lt;/li&gt;
+
+&lt;li&gt;Pour désinstaller Socket.IO : &lt;em&gt;npm uninstall socket.io&lt;/em&gt;.&lt;/li&gt;
+
+&lt;li&gt;Pour voir les modules installés : &lt;em&gt;npm ls&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;L&amp;#8217;installation ne suffit pas pour pouvoir utiliser les méthodes de ce module. Au début de votre server.js, il faut ajouter une ligne : &lt;em&gt;var socketio = require(&amp;#8220;socket.io&amp;#8221;);&lt;/em&gt;. Cette ligne réalise l&amp;#8217;intégration du module au serveur tel un &lt;em&gt;#include &amp;#8220;myLib.h&amp;#8221;&lt;/em&gt; en C.&lt;/p&gt;
+
+&lt;p&gt;Pour découvrir comment l&amp;#8217;utiliser, aller sur le site de &lt;a href='http://socket.io/'&gt;Socket.IO&lt;/a&gt;. Je trouve son utilisation simple et indispensable pour faire un échange d&amp;#8217;informations serveur/client.&lt;/p&gt;
+
+&lt;h4 id='ok_et_aprs_'&gt;Ok et après ?&lt;/h4&gt;
+
+&lt;p&gt;NodeJS est encore jeune et il y a beaucoup à y découvrir. Ce que je vous propose (pas vraiment une proposition en faite), c&amp;#8217;est que je vais continuer ma découverte de NodeJS et réaliser un petit projet de jeu en ligne.&lt;/p&gt;
+
+&lt;p&gt;Je vous invite à faire de même.&lt;/p&gt;
+
+&lt;p&gt;Pas d&amp;#8217;idée par où commencer ? Pourquoi ne pas faire un petit &lt;a href='http://www.grafikart.fr/tutoriels/nodejs/nodejs-socketio-tchat-366'&gt;Chat&lt;/a&gt; en ligne (tutoriel bien fait je trouve).&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>BEng in Computing</title>
+   <link href="http://dgetux.github.com/2012/10/02/beng-computing"/>
+   <updated>2012-10-02T00:00:00+02:00</updated>
+   <id>http://dgetux.github.com/2012/10/02/beng-computing</id>
+   <content type="html">&lt;p&gt;Beaucoup d&amp;#8217;entre vous savent que je suis en Ecosse mais je suis sûr que plus de la moitier ne savent pas ce que j&amp;#8217;y fais ! Et non, je ne suis pas en vacance à Edimbourg pour un ans. Cher les vacances !&lt;/p&gt;
+
+&lt;p&gt;Non non, je suis ici pour étudier. Mais étudier quoi ? Et que signifie &lt;em&gt;&amp;#8220;BEng in Computing&amp;#8221;&lt;/em&gt; ? Je vais de suite vous parler de tout ça.&lt;/p&gt;
+
+&lt;h4 id='beng_in_computing_quest_ce_que_cest_'&gt;BEng in Computing, qu&amp;#8217;est ce que c&amp;#8217;est ?&lt;/h4&gt;
+&lt;!-- break --&gt;
+&lt;p&gt;Voila ce que je fais ici : un &lt;strong&gt;Bachelor of Engineering in Computing/Computer Science&lt;/strong&gt;. En français cela donne quelque chose comme&amp;#8230; &lt;em&gt;&amp;#8220;Diplôme d&amp;#8217;Ingénierie en Informatique&amp;#8221;&lt;/em&gt;. C&amp;#8217;est un peu difficile de trouver quelque chose de comparable en France. Pourquoi ? Car ce n&amp;#8217;est pas un niveau ingénieur que j&amp;#8217;obtiens, c&amp;#8217;est moins. Ce n&amp;#8217;est ni un niveau universitaire français, c&amp;#8217;est plus. Exactement c&amp;#8217;est une 3ème année d&amp;#8217;université. Je m&amp;#8217;explique.&lt;/p&gt;
+
+&lt;p&gt;En France, le DUT GEII (Diplôme français le plus similaire à ce que je fais) est en 2 ans. Hors en Ecosse (comme dans beaucoup d&amp;#8217;autres pays), l&amp;#8217;université est en 3 ou 4 ans. Ayant déjà mon DUT, j&amp;#8217;entre directement en 3ème année. Ceci va me permettre d&amp;#8217;avoir un niveau bachelor et je peux rester une année de plus (en 4ème année) pour obtenir le niveau bachelor + honours (les honneurs). En gros, j&amp;#8217;aurai un niveau Licence / Bac+3~4. Je me préoccupe pas du diplôme que je vais avoir mais des connaissances que je vais pouvoir ajouter à mon CV ainsi que la maitrise de l&amp;#8217;anglais.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h4 id='et_on_y_apprend_quoi_en_beng_de_lordinateur_'&gt;Et on y apprend quoi en BEng de l&amp;#8217;Ordinateur ?..&lt;/h4&gt;
+
+&lt;p&gt;Pour éviter d&amp;#8217;être trop technique pour le moment, je vais généraliser.&lt;/p&gt;
+
+&lt;p&gt;On étudie l&amp;#8217;informatique en générale. Par informatique, je cible le &lt;strong&gt;domaine du Web&lt;/strong&gt; (conception de site internet) et le &lt;strong&gt;domaine du logiciel&lt;/strong&gt; (créer des programmes informatiques; exemple &lt;em&gt;stupide&lt;/em&gt; : fabriquer Internet Explorer &lt;em&gt;cough! cough!&lt;/em&gt;). C&amp;#8217;est un peu (beaucoup) généralisé et ça me fait un peu (beaucoup) mal. Je vais donc être plus technique.&lt;/p&gt;
+
+&lt;p&gt;On ne se contente pas de faire des sites internets. Ce n&amp;#8217;est pas le but. Le but est de connaitre un grand nombre d&amp;#8217;outil pour faire des sites internets &lt;strong&gt;organisés&lt;/strong&gt;, &lt;strong&gt;fonctionnels&lt;/strong&gt;, &lt;strong&gt;sécurisés&lt;/strong&gt;, &lt;strong&gt;rapides&lt;/strong&gt;, etc. C&amp;#8217;est plus des méthodes et façons de travailler. Idem pour ce qui concerne les logicels. Pour être franc, nous ne faisons pas des logicels. Nous nous concentrons sur le rôle d&amp;#8217;un logicel afin que la tâche soit faite au mieux. Je n&amp;#8217;ai pas de bons exemples mais essayons avec celui-ci :&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;On veut créer un jeu dans lequel on joue contre l&amp;#8217;ordinateur. L&amp;#8217;ordinateur doit être fort mais pas trop non plus. Nous devons donc comprendre l&amp;#8217;algorithme du jeu en question pour le donner à l&amp;#8217;ordinateur et le rendre &lt;em&gt;imparfait&lt;/em&gt; afin de pouvoir gagner. Tout cela doit être pensé de manière à être exécuté le plus rapidement possible et sans oublier certains cas.&amp;#8221;&lt;/p&gt;
+&lt;img src='/data/albert.jpg' title='Albert Einstein' /&gt;
+&lt;h4 id='contenu_de_mes_cours_'&gt;Contenu de mes cours :&lt;/h4&gt;
+
+&lt;h5 id='advanced_web_technologies'&gt;Advanced Web Technologies&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HTML5&lt;/strong&gt; &amp;amp; &lt;strong&gt;CSS3&lt;/strong&gt; sont les bases&lt;/li&gt;
+
+&lt;li&gt;Utiliser la librairie javascript &lt;strong&gt;jQuery&lt;/strong&gt;&lt;/li&gt;
+
+&lt;li&gt;Ecrire un site côté &lt;strong&gt;client&lt;/strong&gt;&lt;/li&gt;
+
+&lt;li&gt;Ecrire un site côté &lt;strong&gt;serveur&lt;/strong&gt;&lt;/li&gt;
+
+&lt;li&gt;Gestion &amp;amp; protection des données&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id='algorithms_and_data_structures'&gt;Algorithms and Data Structures&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Utilisation massive du langage &lt;strong&gt;Java&lt;/strong&gt;&lt;/li&gt;
+
+&lt;li&gt;Fonctions de recherche et de trie de données&lt;/li&gt;
+
+&lt;li&gt;Expressions régulières&lt;/li&gt;
+
+&lt;li&gt;Etude de &lt;strong&gt;complexité des fonctions&lt;/strong&gt; ( O(n) et autres joyeusetés)&lt;/li&gt;
+
+&lt;li&gt;Machines à états&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id='software_development_3'&gt;Software Development 3&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Classes et &lt;strong&gt;liens&lt;/strong&gt; entre les classes&lt;/li&gt;
+
+&lt;li&gt;Echange de données entre classes&lt;/li&gt;
+
+&lt;li&gt;Protection des données et avertissement de leur modification&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;Singleton&lt;/strong&gt; &amp;amp; &lt;strong&gt;Observer Pattern&lt;/strong&gt; - &amp;#8230;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Cet article sera probablement mit à jour au cours de l&amp;#8217;année en fonction du déroulement des cours.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Si tu es intéressé et que tu souhaites faire cette année universitaire, n&amp;#8217;hésites pas à me contacter.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Winter's coming</title>
+   <link href="http://dgetux.github.com/2012/09/23/winters-coming"/>
+   <updated>2012-09-23T00:00:00+02:00</updated>
+   <id>http://dgetux.github.com/2012/09/23/winters-coming</id>
+   <content type="html">&lt;p&gt;Je savais que ça arriverai tôt mais tout de même&amp;#8230; on est encore au mois de Septembre !&lt;/p&gt;
+
+&lt;p&gt;Pas d&amp;#8217;inquiétude, il ne neige pas encore et il m&amp;#8217;arrive encore de sortir me promener sans manteau. Par contre on sent que l&amp;#8217;hivers approche dans les magasins. Cet après-midi, je faisais les magasins de fringues (oui, tout est ouvert le Dimanche ici) et j&amp;#8217;ai été très étonné de voir des rayons entier de manteaux d&amp;#8217;hivers, de gants, de bonnets, d&amp;#8217;écharpes, de grattoir pour le givre sur les voitures et des sortes de semelle qui ajoutent des crampons aux chaussures&amp;#8230; Des ajouts de crampons pour les chaussures ? La je m&amp;#8217;inquiète. &lt;strong&gt;C&amp;#8217;est quoi l&amp;#8217;hivers en Ecosse ?!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Bon je vous parle de ça, c&amp;#8217;est surtout pour faire l&amp;#8217;introduction et pour trouver un titre cool pour mon article ;).&lt;/p&gt;
+&lt;!-- break --&gt;
+&lt;h4 id='o_jen_suis_'&gt;Où j&amp;#8217;en suis ?&lt;/h4&gt;
+
+&lt;p&gt;Eh oui, à présent je suis installé dans mon logement, je commence à bien connaitre mes colocataires et les cours ont commencés. Pour les cours je ne vais pas en parler maintenant. Je ferai un article consacré à ce que j&amp;#8217;étudie ici.&lt;/p&gt;
+
+&lt;p&gt;Commençons par le logement. J&amp;#8217;habite le &lt;strong&gt;20/9 D West Tollcross, EH3 9QN, Edinburgh&lt;/strong&gt;. Le lieu &lt;em&gt;Foursquare&lt;/em&gt; existe et ceux qui veulent me rendre visite sont les bienvenu ! C&amp;#8217;est un logement universitaire très actif. Je pense qu&amp;#8217;il y a des soirées tous les soirs. C&amp;#8217;est pas pour autant qu&amp;#8217;on arrive pas à travailler et dormir ;).&lt;/p&gt;
+
+&lt;p&gt;J&amp;#8217;ai des colocataires juste parfait. Je ne pense pas que j&amp;#8217;aurai pu trouver mieux. Tout le monde s&amp;#8217;entend très bien et l&amp;#8217;idée de partage est très présente. Il est fréquent qu&amp;#8217;un de nous 6 cuisine pour plusieurs personnes et invite les autres à manger. De plus, l&amp;#8217;un des colocataires, Daniel, un Ecossai, a apporté ses 2 guitares, son écran de TV et sa PS3. Je ne compte plus les soirées &lt;strong&gt;musiques/chant&lt;/strong&gt;, &lt;strong&gt;bières/Black Ops&lt;/strong&gt; et &lt;strong&gt;ice cream/film&lt;/strong&gt; !&lt;/p&gt;
+
+&lt;p&gt;Une de mes colocatrices est Finlandaise. Elle est adorable comme tout et prend soin de tout le monde dans l&amp;#8217;appartement. La où je l&amp;#8217;adore le plus, c&amp;#8217;est qu&amp;#8217;elle me rappel ma petite soeur car elle nous fait des petits gateaux tous les jours ! Et je ne perd pas mon habitude Francaise à nettoyer les fonds de plats quand elle a finit de cuisiner :).&lt;/p&gt;
+
+&lt;p&gt;Sinon je passe de nombreux après-midi à me balader dans Edimbourg avec cette nouvelle petite bande. Je commence à bien connaitre &lt;strong&gt;Arthur&amp;#8217;s Seat&lt;/strong&gt; (petite pensée pour GuiPomme : &lt;em&gt;&amp;#8221;j&amp;#8217;en profite à fond de cette montagne&amp;#8221;&lt;/em&gt;). Et malgré ce vent froid, la ville est toujours autant magnifique. Je ne m&amp;#8217;en lasse pas !&lt;/p&gt;
+
+&lt;p&gt;Je ne vois pas quoi ajouter de plus pour le moment (et pourtant j&amp;#8217;ai des choses à dire), je vous laisse donc sur cette photo finale. C&amp;#8217;était mon premier jour à l&amp;#8217;appartement. Moi et Noora, ma Finlandaise, sommes aller faire des courses pour la première fois. J&amp;#8217;ai été étonné par la taille de tout ce que l&amp;#8217;on peut trouver. It&amp;#8217;s HUGE O_o !&lt;/p&gt;
+&lt;img src='/data/grosPaquetChips.jpg' style='display: block; margin-right: auto; margin-left: auto;' title='Un immense paquet de chips' /&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Let's talk about the Caledonian Backpackers</title>
+   <link href="http://dgetux.github.com/Ecosse/2012/09/05/lets-talk-about-the-caledonian-backpackers"/>
+   <updated>2012-09-05T00:00:00+02:00</updated>
+   <id>http://dgetux.github.com/Ecosse/2012/09/05/lets-talk-about-the-caledonian-backpackers</id>
+   <content type="html">&lt;p&gt;Je vais vous faire un petit article présentant l&amp;#8217;endroit où je vis actuellement.&lt;/p&gt;
+
+&lt;p&gt;Effectivement, pour le moment je suis dans une auberge de jeunes en attendant le 6 septembre. C’est à cette date que je pourrai aller dans mon logement universitaire.&lt;/p&gt;
+
+&lt;p&gt;L’auberge est le &lt;a href='http://caledonianbackpackers.com/'&gt;Caledonian Backpackers&lt;/a&gt;. Située en plein centre d’Edimbourg, cette auberge est parfaitement bien pensée pour rendre la vie d’un étranger facile.&lt;/p&gt;
+
+&lt;p&gt;Je vais essayer de vous y lister tous les avantages :&lt;/p&gt;
+&lt;!-- break --&gt;
+&lt;ul&gt;
+&lt;li&gt;Chambre de 6, 12 et 36 personnes pour un prix d’environ £14/day, c’est cheap!&lt;/li&gt;
+
+&lt;li&gt;Un casier personnel de rangement pour chaque lit sous cadenas&lt;/li&gt;
+
+&lt;li&gt;De nombreuses toilettes et salles de bain très propres&lt;/li&gt;
+
+&lt;li&gt;Une grande salle de vie avec un bar et de nombreux canapés&lt;/li&gt;
+
+&lt;li&gt;Il y a aussi des billards, une Wii, des jeux de société&lt;/li&gt;
+
+&lt;li&gt;Sans oublier PC fixe en libre service et ordinateurs portables en location gratuite&lt;/li&gt;
+
+&lt;li&gt;Un wifi gratuit sans mot de passe (5mo/s en download et 1mo/s en up)&lt;/li&gt;
+
+&lt;li&gt;Une cuisine très complète pour cuisiner et donc gagner un peu d’argent&lt;/li&gt;
+
+&lt;li&gt;Le matin le petit dèj. est offert de 6AM jusqu’à midi sans limite&lt;/li&gt;
+
+&lt;li&gt;Le personnel est plutôt sympatique&lt;/li&gt;
+
+&lt;li&gt;Il y a une salle de repos avec de nombreux poufs..&lt;/li&gt;
+
+&lt;li&gt;..une petite musique d’oiseau en fond et une superbe vue sur la ville.&lt;/li&gt;
+
+&lt;li&gt;Dans la salle de vie, il y a toujours du bon vieux rock qui passe. J’ai même entendu du &lt;strong&gt;Xavier Rudd&lt;/strong&gt; hier !&lt;/li&gt;
+
+&lt;li&gt;On a une salle de cinéma avec des bons films. Vidéo, son et assise de qualités.&lt;/li&gt;
+
+&lt;li&gt;Un endroit pour faire les lessives&lt;/li&gt;
+
+&lt;li&gt;Et pour finir, les jeunes sont juste extra. On peut parler avec tout le monde. Vers fin août c&amp;#8217;est le meilleur moment.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;J’oublie probablement plein de chose mais je vais m’arrêter la et vous balancer des photos (ça sera mieux que trop de mots).&lt;/p&gt;
+&lt;img src='/data/CaledonianCucumberRoom.jpg' style='display: inline-block; margin: 8px;' title='Salle de repos ou Cucumber Room' width='250px' /&gt;&lt;img src='/data/Caledoniantotoro.jpg' style='display: inline-block; margin: 8px;' title='Oh Totoro est parmi nous !' width='250px' /&gt;&lt;img src='/data/CaledonianEscalier.jpg' style='display: inline-block; margin: 8px;' title='Aperçu de la grandeur du batiment' width='250px' /&gt;&lt;img src='/data/CaledonianCouloir.jpg' style='display: inline-block; margin: 8px;' title='Le couloir menant à la salle de repos, de vie et de bouffe' width='250px' /&gt;&lt;img src='/data/CaledonianCouloirJaune.jpg' style='display: inline-block; margin: 8px;' title='Tous les murs du batiment sont peints' width='250px' /&gt;&lt;img src='/data/CaledonianCouloirRose.jpg' style='display: inline-block; margin: 8px;' title='Partout il y a des affiches pour nous guider' width='250px' /&gt;&lt;img src='/data/CaledonianPeinture.jpg' style='display: inline-block; margin: 8px;' title='Une belle et drôle de peinture, on dirait Jack !' width='530px' /&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>First day at Edinburgh</title>
+   <link href="http://dgetux.github.com/Ecosse/2012/09/05/first-day-at-edinburgh"/>
+   <updated>2012-09-05T00:00:00+02:00</updated>
+   <id>http://dgetux.github.com/Ecosse/2012/09/05/first-day-at-edinburgh</id>
+   <content type="html">&lt;p&gt;Hey you all, Qu’est ce que s’up ?!&lt;/p&gt;
+
+&lt;p&gt;Allez hop, je balance les premières news sur mon Trip Ecossai !&lt;/p&gt;
+
+&lt;p&gt;Commençons par l’avion. Première fois que je prend un avion pour une ligne internationale et c’est juste la plus belle chose que j’ai pu faire dans ma vie. C’est juste magnifique à voir et à sentir. Le décollage et l’attérissage sont loin d’être si affreux que ça. C’est juste un gros manège. Et par contre pour la vue, on en prend juste plein la gueule. Voir la campagne Française au décollage, puis passer progressivement au dessus des nuages pour ensuite avoir la chance de distinguer les couches atmosphériques et enfin l’horizon parfait et un ciel d’un bleu pur. &lt;strong&gt;Miam !&lt;/strong&gt;&lt;/p&gt;
+&lt;img src='/data/avion.jpg' style='display: block; margin-right: auto; margin-left: auto;' title='Les terres Française vuent du ciel' /&gt;
+&lt;p&gt;Progressivement on découvre les terres anglaises après avoir passé la flotte et enfin on découvre l’écosse qui, du ciel, est magnifiquement formée. La terre est comme un coussin de mousse, formé de plein de petites bosses tout en gardant des plaines à perte de vue.&lt;/p&gt;
+&lt;img src='/data/avion1.jpg' style='display: block; margin-right: auto; margin-left: auto;' title='Le ciel, les nuages et l’horizon vue d’avion' /&gt;
+&lt;p&gt;Dès que nous sommes arrivés, on a pris le bus direction le centre puis notre auberge. Les premières impressions que j’ai eu sont que, effectivement les gens sont très accueillants et que la ville est rempli de chateaux et de batiments en pierres apparentes. Un délice pour les yeux !&lt;/p&gt;
+&lt;img src='/data/Edi1.jpg' style='display: block; margin-right: auto; margin-left: auto;' title='Première découverte de la ville d’Edinburgh' /&gt;
+&lt;p&gt;L’auberge est juste parfaite. Pensée de manière à avoir tout ce qu’il faut pour le touriste Français complètement paumé. Il y a beaucoup de jeunes du monde entier et je met un très bon point pour le petit déjeuné gratuit et à volonté qui passe crême !&lt;/p&gt;
+
+&lt;p&gt;Dans notre chambre nous sommes 12 dont une famille d’asiatiques (Chinois/Japonnais ?!). Couché vers 22h30 (voyage et décalage horaire perturbant), le matin c’est 6h30 réveillé et 7h debout. Malgré ces heures matinales (à cause des asiatiques qui se lèvent tôt), il y a beaucoup de vie dans l’auberge.&lt;/p&gt;
+
+&lt;p&gt;Je vais faire un article dédié à cette auberge juste après !&lt;/p&gt;
+&lt;img src='/data/Caledonian.jpg' style='display: block; margin-right: auto; margin-left: auto;' title='Aperçu des décorations présentent dans toute l’auberge' /&gt;
+&lt;p&gt;Pour le moment je ne vois pas quoi ajouter à part que j’ai l’air probablement con en manteau en été (mais bon, il pleut dehors&amp;#8230;) !&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Comment partir étudier en Ecosse</title>
+   <link href="http://dgetux.github.com/Ecosse/2012/09/04/comment-partir-tudier-en-ecosse"/>
+   <updated>2012-09-04T00:00:00+02:00</updated>
+   <id>http://dgetux.github.com/Ecosse/2012/09/04/comment-partir-tudier-en-ecosse</id>
+   <content type="html">&lt;p&gt;Tu es actuellement étudiant en DUT (&lt;em&gt;Diplôme Universitaire Technologique&lt;/em&gt;) et tu as toujours eu envie de voyager ? Alors cet article est fait pour toi !&lt;/p&gt;
+
+&lt;p&gt;Au travers de cet article, je vais te présenter mon parcours et quelles procédures sont à faire pour mener à bien ce projet.&lt;/p&gt;
+
+&lt;h4 id='mon_parcours'&gt;Mon parcours&lt;/h4&gt;
+
+&lt;p&gt;Après mon BAC STI en Electrotechnique, j’ai été en université à Angers pour faire un DUT GEII (&lt;em&gt;Diplôme Universitaire Technologique Genie Electrique et Informatique Industrielle&lt;/em&gt;). Durant ces 2 années, on m’a présenté différent moyen pour aller à l’étranger. Il y avait le stage de fin d’année que l’on pouvait faire en entreprise dans un autre pays. Il y avait aussi la possibilité de faire le semèstre 4 dans une université à l’étranger (une liste présentait les universités participantes). Et pour finir, on nous proposait de partir en DUETI (&lt;em&gt;Diplôme Universitaire d’Etudes Technologique Internationale&lt;/em&gt;). C’est ce dernier qui m’a intéressé.&lt;/p&gt;
+
+&lt;p&gt;Je me suis donc renseigné sur ce que c’était. Il s’agit de partir étudier 1 ans en université à l’étranger. On part donc faire une 3ème année d’université (chose pas courante en France mais qui l’est pour un grand nombre de pays) dans un autre pays tout en restant dans le programme Français. C’est à dire que l’on est couvert par notre université Française, que les résultats y sont envoyés et cela signifie aussi qu’en fin d’année scolaire il faut rendre un rapport (type rapport de stage) et faire un oral en anglais d’une demi heure (information à vérifier). Ce n’est pas un travail bien compliqué mais tout de même je pense que ça demande du temps. Le plus important et c’est ce qui m’a retenu je pense, c’est les aides financières Française. Pour nous aider, la France nous fournit quelques aides à condition de bien lire toutes les lignes. La plupart des aides s’avèrent ne pas être accessible car il faut être dans un programme Erasmus et non DUETI, car il faut partir au moins X mois et pas plus de Y mois, etc. Au final, j’avais compté gagner environ 1700€ en 1 ans. Ca peut paraître beaucoup mais ça ne l’est pas . Je m’explique juste après.&lt;/p&gt;
+
+&lt;p&gt;Il y a une liste d’universités accessibles en DUETI qui recouvrent un bon nombre de pays. J’ai souvenir du Quebec (mais ils parlent Français donc à part revenir avec un accent…), le Royaume Uni (dont l’Ecosse), l’Irlande et d’autres pays. Il faudrait que je retrouve la page avec cette liste…&lt;/p&gt;
+
+&lt;p&gt;Mon choix a été vite fait quand j’ai appris qu’en Ecosse on nous paie nos frais d’inscription (pour les EU). Effectivement, quand on voit qu’il faut avancer £1820 soit environ 2300€ juste pour entrer dans l’université, ça fait mal (c’est le prix pour une année) ! La condition pour bénéficier du paiement des frais d’inscription est de ne pas toucher d’aide à côté. J’ai donc dû choisir entre gagner 1700€ et 2300€. Autant vous dire que le choix fût rapide !&lt;/p&gt;
+
+&lt;p&gt;A partir du moment que je ne voulais plus des aides Françaises, je ne voyais plus l’intérêt de partir en DUETI. C’est pourquoi, au jour d’aujourd’hui, je suis officiellement inscrit à…&lt;/p&gt;
+&lt;span style='display: block; margin-left: auto; margin-right: auto; font-weight: bold; text-align: center;'&gt;
+Edinburgh Napier University&lt;br /&gt;
+in Scotland
+&lt;/span&gt;
+&lt;p&gt;…en tant qu’étudiant Européen sans programme.&lt;/p&gt;
+&lt;img src='/data/NapierLogo.jpg' style='display: block; margin-right: auto; margin-left: auto;' title='Logo de l’université Napier' width='300px' /&gt;
+&lt;p&gt;Maintenant que les présentations sont faites, je vais vous expliquer la procédure pour y arriver.&lt;/p&gt;
+
+&lt;h4 id='la_procdure'&gt;La procédure&lt;/h4&gt;
+
+&lt;p&gt;Je ne vais pas t’expliquer comment s’inscrire dans une école étrangère en général mais uniquement comment s’inscrire dans une école Écossaise. Plus précisément, comment entrer à l’université de &lt;strong&gt;Napier à Édimbourg&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Tout commence sur le site &lt;a href='http://www.ucas.com/'&gt;UCAS&lt;/a&gt; dans la rubrique « &lt;em&gt;Apply&lt;/em&gt; » puis « &lt;em&gt;Register / Log in to use Apply 20xx&lt;/em&gt; ». A partir de ce moment, tu vas progressivement créer ton dossier pour faire ta demande dans l’école de ton choix. C’est long, très long à faire. Je me rappel avoir passé une bonne semaine, tous les jours connectés, pour remplir le formulaire. C’est pourquoi je te conseil de t’inscrire très tôt. Par exemple dès début novembre tu peux commencer à le faire. Tu auras jusqu’à mi-janvier pour le finir (pour mon cas c’était jusqu’au 15 janvier).&lt;/p&gt;
+
+&lt;p&gt;Durant cette inscription, on va te demander de rentrer tes résultats scolaires, les travaux/emplois que tu as eu, coordonnées, situation familiale, les informations sur ton tuteur (pour mon cas, j’ai choisi mon professeur d’anglais que j’avais à l’université), ton tuteur devra aussi se connecter au site pour entrer des informations sur toi (par exemple ta motivation au travail) et pour finir tu devras faire une lettre de motivation. Pour cette dernière, n’hésite pas à demander de l’aide à ton tuteur.&lt;/p&gt;
+
+&lt;p&gt;Ah et j’allais oublier le plus important ! Tu vas surtout choisir ton école et le cours que tu souhaites dans cette école. C’est un peu le but de UCAS, faire les demandes à ta place dans l’école de ton choix ! A la fin de l’inscription tu devras payer une petite somme d’argent (j’ai souvenir d’une 10ène d’€).&lt;/p&gt;
+
+&lt;p&gt;Après cette inscription, il va se passer de très long mois à attendre une réponse qui sera positive ou négative. Positive : tant mieux pour toi. Négative : ils vont tâcher de te trouver une solution de repli en te proposant par exemple un cours plus simple adapté à ton niveau scolaire. Sur ce que l’on appel &lt;a href='https://ucastrack.ucas.com'&gt;UCAS Track&lt;/a&gt;, tu pourras voir l’avancement de ton dossier. Si tu peux avoir ce cours, tu pourras le valider en mettant « Firm ». Tu peux aussi le mettre en « Insurance » pour qu’il passe en secondaire si tu as fais plusieurs choix. Et sinon tu peux aussi mettre « Decline ». Pour plus d’information &lt;a href='http://www.ucas.com/students/offers/replyingtoyouroffers'&gt;+ info&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Par la suite tu vas commencer à entrer en contact direct avec l’université. Pour mon cas, Napier m’a demandé de leur envoyer une photocopie de mes résultats scolaires comme preuve par rapport à ceux entrés sur le site UCAS.&lt;/p&gt;
+
+&lt;p&gt;A force de recevoir des lettres et emails de leur part, tu sauras tout ce qu’il y a à faire. Entre autre, tu devras faire ta demande de logement si tu souhaites en avoir un couvert par l’université. Ce site présente la liste des logement universitaires disponibles &lt;a href='http://bit.ly/RU6MWK'&gt;Accommodation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Tu devras te trouver un « &lt;em&gt;Garant&lt;/em&gt; » qui sera la personne chargée de te payer tes frais de logement si tu n’y arrives pas. Courrier à renvoyer par la poste avec un délais précis. Fait y attention si tu ne veux pas ralentir la procédure et peut être perdre ton logement.&lt;/p&gt;
+
+&lt;p&gt;Pour finir, une chose importante est de s’inscrire sur le site du &lt;a href='https://www.saas.gov.uk/'&gt;SAAS&lt;/a&gt;. C’est eux qui vont te payer tes frais d’inscription. &lt;strong&gt;IL FAUT LE FAIRE TÔT&lt;/strong&gt; ! Renseigne toi de la date butoire (moi c’était avant le 30 juin). Après cette date, tu passeras en liste d’attente et la procédure sera bien plus longue. Fait y attention. Pour mon cas, je n’ai pas été assez renseigné et les procédures ont étés plus longue. Si tu fais ta demande dans les bons délais, tu devrais avoir une réponse courant Juillet/Août. Pour mon cas j&amp;#8217;ai eu la réponse début Septembre. Les cours commençaient juste. Ce n&amp;#8217;est pas dramatique, ils sont habitués. Il suffit juste de leur transmettre les documents du SAAS dès que possible.&lt;/p&gt;
+&lt;img src='/data/Napier.jpg' style='display: block; margin-right: auto; margin-left: auto;' title='Photo du campus Craiglockhart' /&gt;
+&lt;h4 id='une_fois_sur_place'&gt;Une fois sur place&lt;/h4&gt;
+
+&lt;p&gt;Tu as réussi la partie administrative, tu as même trouvé un vol cheap pour aller à Edimbourg. &lt;strong&gt;Félicitation&lt;/strong&gt;, le plus dur et le plus ennuyant est fait. A présent tu vas pouvoir commencer à te rendre compte que tu n&amp;#8217;as pas fait tout ça pour rien !&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;#8220;Je ne sais pas trop comment m&amp;#8217;y prendre pour la suite de cet article. Je pense que je vais lister ce que moi j&amp;#8217;ai fait en arrivant à Edimbourg.&amp;#8221;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h5 id='lemploi_du_temps'&gt;L&amp;#8217;Emploi du temps&lt;/h5&gt;
+
+&lt;p&gt;Quand tu vas connaitre ton emploi du temps pour la première fois, tu vas probablement être choqué. On m&amp;#8217;avait prévenu mais je m&amp;#8217;attendai pas à ça. J&amp;#8217;ai environ 14h de cours par semaine et j&amp;#8217;ai un weekend de 4 jours. Je ne te cache donc pas qu&amp;#8217;ils attendent de toi un travail personnel immense (c&amp;#8217;est la méthode à l&amp;#8217;anglaise, renseigne toi avant si tu ne connais pas). Donc tu auras beaucoup de temps libre.&lt;/p&gt;
+
+&lt;p&gt;Pourquoi pas essayer de trouver un petit travail étudiant ? Ca te permettra de rentabiliser les nombreuses pintes achetées dans les Pub ! Quelques règles pour pouvoir travailler :&lt;/p&gt;
+
+&lt;h5 id='demander_un_nationnal_insurance_number_nin'&gt;Demander un Nationnal Insurance Number (NIN)&lt;/h5&gt;
+
+&lt;p&gt;C&amp;#8217;est un numéro qui te permet de travailler en Ecosse et te permet d&amp;#8217;avoir certaines couvertures/aides en cas de problème. Je suis pas très sur de moi mais ce qui est certain c&amp;#8217;est que si tu souhaites avoir un travail étudiant durant la semaine/weekend, tu auras besoin de ce numéro.&lt;/p&gt;
+
+&lt;p&gt;Pour l&amp;#8217;avoir, rien de plus simple. Tu les appels, ils vont te demander tes origines, où tu vies et pourquoi tu veux ce numéro. Ensuite ils vont te donner une horaire de rendez vous. Tu te pointes au rendez vous et &amp;#8230; (mon rendez vous est le 11 octobre donc je laisse cette partie en stand by car je ne connais pas encore la suite ;) ).&lt;/p&gt;
+
+&lt;h5 id='bank_account'&gt;Bank Account&lt;/h5&gt;
+
+&lt;p&gt;Avant de partir, je suis allé me renseigner à ma banque s&amp;#8217;ils avaient une offre adaptée à mon projet. Ils m&amp;#8217;ont proposé de passer sur une carte Premier/Gold qui me permet de payer avec ma carte partout en Europe sans avoir des taxes énormes (sauf en retrait liquide, c&amp;#8217;est bien surtaxé). J&amp;#8217;avoue être passé sur cette offre car il y avait une offre étudiante et qu&amp;#8217;elle me coûte presque rien.&lt;/p&gt;
+
+&lt;p&gt;Le problème est que si je veux travailler, le versement du salaire se fait sur un compte UK. Ils ne peuvent pas transférer l&amp;#8217;argent sur un compte à l&amp;#8217;étranger. J&amp;#8217;ai donc été me créer un nouveau compte à la banque Barclays. C&amp;#8217;est très simple, c&amp;#8217;est gratuit et le personnel est habitué et met à l&amp;#8217;aise. Je te laisse découvrir la procédure par toi même, mais pas d&amp;#8217;inquiétude. Je me rappel avoir plus parlé du fromage et du vin rouge Français que du compte bancaire !&lt;/p&gt;
+
+&lt;p&gt;En plus de servir pour le versement de ma paie, ce compte me permet de retirer en cash sans payer de taxe contrairement à ma carte Française.&lt;/p&gt;
+
+&lt;h5 id='tlphone_portable'&gt;Téléphone portable&lt;/h5&gt;
+
+&lt;p&gt;Tu vas te rendre compte que ton numéro de portable Français est pas aimé en Ecosse. Déjà tu payes plus cher suivant ton offre mobile (pour mon cas 10cent/SMS et 40cent/min) et tout ce qui est administratif &lt;strong&gt;ne veulent pas&lt;/strong&gt; de ton numéro car ils refusent d&amp;#8217;appeler à l&amp;#8217;étranger.&lt;/p&gt;
+
+&lt;p&gt;Voici comment j&amp;#8217;ai fait (je vais faire&amp;#8230;) : Mon abonnement se termine en Novembre, je vais fermer ma ligne chez Bouygue Telecom pour passer sur un forfait FreeMobil à 2€/mois juste pour garder mon numéro. Et je vais ouvrir une ligne en Ecosse pour environ £10/mois. Donc récapitulons : je payais environ 24€/mois, je passe à environ 14€/mois, je suis gagnant ;).&lt;/p&gt;
+
+&lt;p&gt;Je mettrai à jour cette partie quand ça sera véritable fait.&lt;/p&gt;
+
+&lt;h5 id='mdecin_gnraliste'&gt;Médecin Généraliste&lt;/h5&gt;
+
+&lt;p&gt;En Ecosse, ils appellent ça un GP (General Practice). La question de &lt;em&gt;&amp;#8220;Faut il en avoir un ?&amp;#8221;&lt;/em&gt; ne se pose pas. &lt;strong&gt;Il faut !&lt;/strong&gt; Certains prennent le risque de ne pas le faire. Etant donné que l&amp;#8217;on sait pas ce qu&amp;#8217;il peut nous arriver, il est fortement déconseillé et stupide de ne pas le faire. Pour en avoir un, il suffit de remplir une feuille et de la rendre à la personne concernée (pour mon cas c&amp;#8217;était un cabinet à 200m de mon logement). Tu n&amp;#8217;as rien à payer, pas de rendez vous à prendre. Juste à remplir correctement cette feuille et te voila couvert par un GP !&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;#8220;Bientôt une nouvelle mise à jour de cet article. J&amp;#8217;attend d&amp;#8217;avoir eu mon NIN et trouvé un travail. Si vous avez des remarques à faire ou simplement me signaler des fautes d&amp;#8217;orthographe, don&amp;#8217;t be shy !&amp;#8221;&lt;/em&gt;&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>SongAccoustic change d'outil de travail</title>
+   <link href="http://dgetux.github.com/SongAccoustic/2012/09/03/songaccoustic-change-doutil-de-travail"/>
+   <updated>2012-09-03T00:00:00+02:00</updated>
+   <id>http://dgetux.github.com/SongAccoustic/2012/09/03/songaccoustic-change-doutil-de-travail</id>
+   <content type="html">&lt;p&gt;Après avoir travaillé toute la semaine avec mon habituel programme de MAO (&lt;em&gt;Musique Assistée par Ordinateur&lt;/em&gt;), j’ai décidé de changer pour quelque chose de plus complet. J’ai fais ce choix hier et j’ai choisi &lt;strong&gt;SONAR X1 Producer&lt;/strong&gt; de &lt;strong&gt;Cakewalk&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src='/data/Sonar.jpg' style='display: block; margin-right: auto; margin-left: auto;' title='Capture d’écran de SONAR X1 Producer' /&gt;
+&lt;p&gt;L’avantage principal est qu’il est compatible avec ma table de contrôle d’enregistrement Cakewalk (V-Studio 20). Je peux donc contrôler le programme avec et rendre le travail plus accessible. Je pouvais déjà faire cela avec mon ancien Guitar Track 4. La où SONAR le bât est qu’il est bien plus complet niveau banque de sons et surtout pour les effets. Par contre, je ne cache pas qu’aux premiers abords on est un peu perdu car c’est une usine à gaz. Mais on retrouve très vite ses repères.&lt;/p&gt;
+
+&lt;p&gt;On sent aussi la qualité qui augmente, surtout dans les fichiers de sortie. Anciennement je tournai à 30 mo le wav de sortie. Maintenant je suis plus autout de 70 mo. Mais il faut au moins ça pour mes nombreux fans .&lt;/p&gt;
+&lt;img src='/data/MoiStudio.jpg' style='display: block; margin-right: auto; margin-left: auto;;' title='Moi et mon studio en carton' /&gt;
+&lt;p&gt;Je profite de cet article pour vous rappeler que &lt;a href='http://www.songaccoustic.fr'&gt;SongAccoustic&lt;/a&gt; est à présent ouvert. N&amp;#8217;attendez plus et allez écouter/télécharger mes compositions !&lt;/p&gt;
+
+&lt;p&gt;Musicalement.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>SongAccoustic opens its doors</title>
+   <link href="http://dgetux.github.com/SongAccoustic/2012/09/02/songaccoustic-opens-its-doors"/>
+   <updated>2012-09-02T00:00:00+02:00</updated>
+   <id>http://dgetux.github.com/SongAccoustic/2012/09/02/songaccoustic-opens-its-doors</id>
+   <content type="html">&lt;img src='/data/SALogo.png' style='float: right; margin-left: 20px;' title='Logo SongAccoustic' /&gt;
+&lt;p&gt;Dans la page &lt;a href='about.md'&gt;About David&lt;/a&gt;, je vous avais signalé que je donnerai quelques informations sur &lt;a href='http://www.songaccoustic.fr'&gt;SongAccoustic&lt;/a&gt; et bien les voici !&lt;/p&gt;
+
+&lt;p&gt;Depuis plus d’un ans (peut être même deux maintenant), moi et un ami (Alexandre alias urcadox) mettons en place un site internet pour présenter mes compositions musicales. Nous avons travaillé de nombreuses heures dessus afin de fournir un site de qualité et ces dernières semaines Alexandre a donné beaucoup de son temps pour finaliser la version qui est actuellement en ligne.&lt;/p&gt;
+
+&lt;p&gt;De mon côté, j&amp;#8217;ai travaillé une semaine entière sur la finalisation des compositions. Refaire certaines pistes voix et instruments de certains morceaux, gérer les balances, les niveaux sonores, etc. Pour information, j’utilise le &lt;strong&gt;Studio-V20&lt;/strong&gt; de la marque &lt;strong&gt;Rolland&lt;/strong&gt; qui est juste parfait pour le type d’enregistrement que je fais. Mon plus gros bémol est probablement mon micro, un Sennheiser E825S. Je compte investir dans un bon micro pour 2013.&lt;/p&gt;
+
+&lt;p&gt;Si vous êtes passionné de MAO ou que vous êtes dans le métier, ce serait avec grand plaisir que j’aimerai en apprendre plus dans ce domaine (enregistrement studio) !&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Découverte</title>
+   <link href="http://dgetux.github.com/General/2012/09/01/dcouverte"/>
+   <updated>2012-09-01T00:00:00+02:00</updated>
+   <id>http://dgetux.github.com/General/2012/09/01/dcouverte</id>
+   <content type="html">&lt;h3 id='bienvenu_sur_mon_nouveau_blog'&gt;Bienvenu sur mon nouveau blog.&lt;/h3&gt;
+
+&lt;p&gt;Je suis &lt;em&gt;David Guyon&lt;/em&gt;. J’ai actuellement 21 ans et je suis encore étudiant. Je viens d’obtenir mon Diplome Universitaire Technologique en Génie Electrique et Informatique Industrielle (DUT GEII). Je ne vais pas me présenter en détail ici. La page &lt;a href='about.html'&gt;About David&lt;/a&gt; est faite pour.&lt;/p&gt;
+
+&lt;h3 id='pourquoi_choisir_de_crer_un_blog_'&gt;Pourquoi choisir de créer un blog ?&lt;/h3&gt;
+
+&lt;p&gt;Déjà j&amp;#8217;ai commencé ce blog sur WordPress et un ami m&amp;#8217;a vite conseillé de passer sous Jekyll. C&amp;#8217;est un système de blog statique et c&amp;#8217;est juste parfait !&lt;/p&gt;
+
+&lt;p&gt;Autre raison : j’avais déjà un blog sur ma passion du « DIY » (Do It Yourself) mais je n’ai pas réussi à le tenir à jour. J’ai tout arrêté. La raison est que je n’ai pas qu’une seule passion mais un certain nombre et j’aimerai pouvoir m’exprimer sur chacune d’entre elles. C’est ici la principale raison de la création de ce blog. J’exprimerai ici tout et n’importe quoi. Je passerai du coq à l’âne, parlant d’électronique puis de cuisine en passant par des notions d’écologie. Bref, attendez vous à voir des articles très divers. C’est pourquoi je prendrai le soin de bien trier mes articles par catégories !&lt;/p&gt;
+
+&lt;p&gt;En vous souhaitant de revenir rapidement pour de nouveaux articles, David.&lt;/p&gt;</content>
+ </entry>
+ 
+ 
+</feed>
