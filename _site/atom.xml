@@ -4,7 +4,7 @@
  <title>Mon Blog</title>
  <link href="http://dgetux.github.com/atom.xml" rel="self"/>
  <link href="http://dgetux.github.com"/>
- <updated>2013-01-14T14:26:03+01:00</updated>
+ <updated>2013-01-14T16:17:50+01:00</updated>
  <id>http://dgetux.github.com</id>
  <author>
    <name>David Guyon</name>
@@ -18,10 +18,10 @@
    <updated>2013-01-14T00:00:00+01:00</updated>
    <id>http://dgetux.github.com/Informatique/2013/01/14/nodejs-cest-cool</id>
    <content type="html">&lt;p&gt;Et si je prenais le temps de vous présenter ce qui occupe mes journées en ce moment ? Let&amp;#8217;s go, je vais vous présenter NodeJS.&lt;/p&gt;
-&lt;img src='/data/nodejs_logo.png' style='float: right; margin-left: 15px; margin-bottom: 15px;' title='Logo de NodeJS' /&gt;
+&lt;img src='/data/nodejs_logo.png' style='width: 220px; float: right; margin-left: 15px; margin-bottom: 15px;' title='Logo de NodeJS' /&gt;
 &lt;h4 id='nodejs_cest_quoi_'&gt;NodeJS c&amp;#8217;est quoi ?&lt;/h4&gt;
 
-&lt;p&gt;NodeJS c&amp;#8217;est une application qui tourne côté serveur afin de gérer un site internet surtout côté serveur mais aussi côté client. C&amp;#8217;est à dire que vous n&amp;#8217;utiliserez plus de langage serveur tel que le PHP, vous utiliserez le &lt;strong&gt;JavaScript&lt;/strong&gt; !&lt;/p&gt;
+&lt;p&gt;NodeJS c&amp;#8217;est une application qui tourne côté serveur afin d&amp;#8217;exécuter du code JavaScript. Vous avez donc la possibilité (et c&amp;#8217;est ce vers quoi NodeJS est orienté) de faire des sites internets avec du code JavaScript côté client et côté serveur. C&amp;#8217;est à dire que côté serveur vous n&amp;#8217;utiliserez plus de PHP (ou autre), vous programmerez en &lt;strong&gt;JavaScript&lt;/strong&gt; !&lt;/p&gt;
 &lt;!-- break --&gt;
 &lt;p&gt;Le JavaScript va vous offrir de nombreux avantages qui seront peut être des inconvénients pour certain. Vous allez devoir créer le serveur web de toute pièce : configurer les options du serveur, gérer les requêtes envoyées par le client et envoyer au client les informations dont il a besoin.&lt;/p&gt;
 
@@ -37,7 +37,7 @@
 
 &lt;p&gt;Déjà vous allez devoir l&amp;#8217;installer. Vous trouverez sur internet de nombreux sites qui l&amp;#8217;explique. En général l&amp;#8217;installation est très simple. De plus si vous travaillez sous Ubuntu ou sous ArchLinux, NodeJS est dans les dépôts. Un simple &lt;em&gt;sudo apt-get install nodejs&lt;/em&gt; sous Ubuntu ou un &lt;em&gt;yaourt -S nodejs&lt;/em&gt; sous ArchLinux vous installera votre précieux.&lt;/p&gt;
 
-&lt;p&gt;Maintenant que vous avez NodeJS, commençont par une application simple.&lt;/p&gt;
+&lt;p&gt;Maintenant que vous avez NodeJS, commençons par une application simple.&lt;/p&gt;
 
 &lt;h5 id='hello_world'&gt;Hello World!&lt;/h5&gt;
 
@@ -57,7 +57,7 @@
 
 &lt;h5 id='a_quoi_sert_socketio_'&gt;A quoi sert Socket.IO ?&lt;/h5&gt;
 
-&lt;p&gt;Ce module permet de facilement implémenter un échange d&amp;#8217;informations entre votre client et votre serveur sans avoir à rafraichir la page. Je suppose qu&amp;#8217;actuellement vous utilisez des requêtes AJAX. C&amp;#8217;est la même chose à la différence que vous pourrez travailler avec des &lt;em&gt;socket.emit(&amp;#8220;data&amp;#8221;, monObjetJSON);&lt;/em&gt; et des &lt;em&gt;socket.on(&amp;#8220;data&amp;#8221;,functionQuiFaitQuelqueChose(JSONObjet){});&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Ce module permet de facilement implémenter un échange d&amp;#8217;informations entre votre client et votre serveur sans avoir à rafraichir la page. On appel cela le &lt;strong&gt;&lt;a href='https://developer.mozilla.org/en-US/docs/WebSockets'&gt;WebSocket&lt;/a&gt;&lt;/strong&gt;. Je suppose qu&amp;#8217;actuellement vous utilisez des requêtes AJAX. C&amp;#8217;est la même chose à la différence que vous pourrez travailler avec des &lt;em&gt;socket.emit(&amp;#8220;data&amp;#8221;, monObjetJSON);&lt;/em&gt; et des &lt;em&gt;socket.on(&amp;#8220;data&amp;#8221;,functionQuiFaitQuelqueChose(JSONObjet){});&lt;/em&gt;.&lt;/p&gt;
 
 &lt;h5 id='installation_et_utilisation_du_module'&gt;Installation et utilisation du module&lt;/h5&gt;
 

@@ -9,11 +9,11 @@ tags: [NodeJS]
 
 Et si je prenais le temps de vous présenter ce qui occupe mes journées en ce moment ? Let's go, je vais vous présenter NodeJS.
 
-<img src="{{BASE_PATH}}/data/nodejs_logo.png" title="Logo de NodeJS" style="float: right; margin-left: 15px; margin-bottom: 15px;"/>
+<img src="{{BASE_PATH}}/data/nodejs_logo.png" title="Logo de NodeJS" style="width: 220px; float: right; margin-left: 15px; margin-bottom: 15px;"/>
 
 ####NodeJS c'est quoi ?
 
-NodeJS c'est une application qui tourne côté serveur afin de gérer un site internet surtout côté serveur mais aussi côté client. C'est à dire que vous n'utiliserez plus de langage serveur tel que le PHP, vous utiliserez le **JavaScript** ! 
+NodeJS c'est une application qui tourne côté serveur afin d'exécuter du code JavaScript. Vous avez donc la possibilité (et c'est ce vers quoi NodeJS est orienté) de faire des sites internets avec du code JavaScript côté client et côté serveur. C'est à dire que côté serveur vous n'utiliserez plus de PHP (ou autre), vous programmerez en **JavaScript** !
 
 <!-- break -->
 
@@ -32,7 +32,7 @@ Je ne vais pas vous présenter en détail comment programmer en utilisant NodeJS
 Déjà vous allez devoir l'installer. Vous trouverez sur internet de nombreux sites qui l'explique. En général l'installation est très simple. De plus si vous travaillez sous Ubuntu ou sous ArchLinux, NodeJS est dans les dépôts. 
 Un simple *sudo apt-get install nodejs* sous Ubuntu ou un *yaourt -S nodejs* sous ArchLinux vous installera votre précieux. 
 
-Maintenant que vous avez NodeJS, commençont par une application simple. 
+Maintenant que vous avez NodeJS, commençons par une application simple. 
 
 #####Hello World!
 
@@ -54,7 +54,7 @@ Avec NodeJS, il est simple de travailler avec des modules. Je vais vous présent
 
 #####A quoi sert Socket.IO ?
 
-Ce module permet de facilement implémenter un échange d'informations entre votre client et votre serveur sans avoir à rafraichir la page. Je suppose qu'actuellement vous utilisez des requêtes AJAX. C'est la même chose à la différence que vous pourrez travailler avec des *socket.emit("data", monObjetJSON);* et des *socket.on("data",functionQuiFaitQuelqueChose(JSONObjet){});*. 
+Ce module permet de facilement implémenter un échange d'informations entre votre client et votre serveur sans avoir à rafraichir la page. On appel cela le **[WebSocket](https://developer.mozilla.org/en-US/docs/WebSockets)**. Je suppose qu'actuellement vous utilisez des requêtes AJAX. C'est la même chose à la différence que vous pourrez travailler avec des *socket.emit("data", monObjetJSON);* et des *socket.on("data",functionQuiFaitQuelqueChose(JSONObjet){});*. 
 
 #####Installation et utilisation du module
 
