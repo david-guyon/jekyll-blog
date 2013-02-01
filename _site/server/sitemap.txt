@@ -6,7 +6,6 @@ http://dgetux.github.com/categories.html
 http://dgetux.github.com/atom.xml
 http://dgetux.github.com/sitemap.txt
 
-http://dgetux.github.com/Informatique/2013/02/01/wiimote-sous-linux-avec-la-libairie-wiiuse
 http://dgetux.github.com/Informatique/2013/01/14/nodejs-cest-cool
 http://dgetux.github.com/2012/10/02/beng-computing
 http://dgetux.github.com/2012/09/23/winters-coming

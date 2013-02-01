@@ -4,7 +4,7 @@
  <title>Mon Blog</title>
  <link href="http://dgetux.github.com/atom.xml" rel="self"/>
  <link href="http://dgetux.github.com"/>
- <updated>2013-02-01T20:40:12+01:00</updated>
+ <updated>2013-02-01T18:41:52+01:00</updated>
  <id>http://dgetux.github.com</id>
  <author>
    <name>David Guyon</name>
@@ -13,134 +13,47 @@
 
  
  <entry>
-   <title>Wiimote sous Linux avec la lib WiiUse</title>
-   <link href="http://dgetux.github.com/Informatique/2013/02/01/wiimote-sous-linux-avec-la-libairie-wiiuse"/>
-   <updated>2013-02-01T00:00:00+01:00</updated>
-   <id>http://dgetux.github.com/Informatique/2013/02/01/wiimote-sous-linux-avec-la-libairie-wiiuse</id>
-   <content type="html">&lt;img src='/data/wiimoteWindows.jpg' style='width: 300px; float: right; margin-left: 15px; margin-bottom: 15px;' title='Wiimote sous Windows' /&gt;
-&lt;p&gt;Je m&amp;#8217;étais déjà amusé à écrire un petit programme qui récupére les données échangées entre mon PC et ma manette filaire de 360. C&amp;#8217;était drôle mais je voulais plus de fun et j&amp;#8217;avais toujours voulu essayer avec une Wiimote.&lt;/p&gt;
-
-&lt;p&gt;C&amp;#8217;est, à présent, chose faite puisque je viens de réussir à l&amp;#8217;instant à faire un programme en C qui relie ma Wiimote à mon PC.&lt;/p&gt;
-
-&lt;p&gt;Je vais vous expliquer en détail comment j&amp;#8217;ai fait car la tâche n&amp;#8217;a pas été simple.&lt;/p&gt;
-&lt;!-- break --&gt;
-&lt;h4 id='avant_de_commencer'&gt;Avant de commencer&lt;/h4&gt;
-
-&lt;p&gt;Il va vous falloir une Wiimote (avec ou sans Nunchuk) ainsi qu&amp;#8217;une clef Bluetooth.&lt;/p&gt;
-
-&lt;p&gt;Il faut savoir que je suis sous ArchLinux (distribution Linux). Si vous êtes sous Ubuntu (ou autre), il ne devrait pas y avoir de problème. Tout ce qu&amp;#8217;il vous faut c&amp;#8217;est s&amp;#8217;assurer que &lt;strong&gt;bluez&lt;/strong&gt; est installé.&lt;/p&gt;
-
-&lt;p&gt;lien utile : &lt;a href='https://wiki.archlinux.org/index.php/Wiimote'&gt;ArchLinux - wiki : Wiimote&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Si tu es sous Windows, ça devrait fonctionner mais ça reste à vérifier. La librairie que nous allons utiliser est compatible WIN32 (c&amp;#8217;est ce que j&amp;#8217;en ai déduit quand lu le code source de la librairie).&lt;/p&gt;
-
-&lt;h5 id='essayons_voir_si_a_marche'&gt;Essayons voir si ça marche&lt;/h5&gt;
-
-&lt;p&gt;Ouvre ton terminal préféré et lance : &amp;#8221;&lt;em&gt;hcitool scan&lt;/em&gt;&amp;#8221;. Appui sur les boutons &amp;#8220;1&amp;#8221; et &amp;#8220;2&amp;#8221; de la Wiimote afin d&amp;#8217;effectuer une recherche. Si tout se passe bien, tu devrais avoir quelque chose comme ça :&lt;br /&gt; &lt;span class='source-code'&gt;
-Scanning ...&lt;br /&gt;
-00:1E:35:2F:34:FA	Nintendo RVL-CNT-01
-&lt;/span&gt;&lt;/p&gt;
-
-&lt;h5 id='essayons_quelque_chose_de_plus_drle'&gt;Essayons quelque chose de plus drôle&lt;/h5&gt;
-
-&lt;p&gt;Dans le même terminal, lance : &amp;#8221;&lt;em&gt;sudo wminput&lt;/em&gt;&amp;#8221;. Appui sur &amp;#8220;1&amp;#8221; et &amp;#8220;2&amp;#8221; et tu devrais voir ceci dans la console :&lt;br /&gt; &lt;span class='source-code'&gt;
-Put Wiimote in discoverable mode now (press 1+2)...&lt;br /&gt;
-Ready.
-&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;Maintenant bouge ta Wiimote ! Héhé, non tu ne rêves pas. Tu peux effectivement contrôler la souris de ton PC avec ta Wiimote. Tu vas vite te rendre compte que c&amp;#8217;est pas pratique mais c&amp;#8217;est tout de même une bonne avancé. Il ne nous reste qu&amp;#8217;à utiliser tout ceci dans un projet personnel avec un but plus intéressant.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Pour quitter wminput, un Ctrl+c dans la console va tuer le processus.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Attaquons nous maintenant au plus intéressant, le code source !&lt;/p&gt;
-
-&lt;h4 id='la_librairie_wiiuse'&gt;La librairie WiiUse&lt;/h4&gt;
-
-&lt;p&gt;Pour commencer, nous allons avoir besoin d&amp;#8217;une librairie. J&amp;#8217;ai trouvé la librairie &lt;strong&gt;WiiUse&lt;/strong&gt; qui me parrait bien par sa taille, sa compatibilité Linux/Windows et le fait qu&amp;#8217;elle soit simple et complète à la fois.&lt;/p&gt;
-
-&lt;h5 id='liens'&gt;Liens&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='http://sourceforge.net/projects/wiiuse/files/wiiuse/'&gt;Page de téléchargement de la librairie&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='https://github.com/rpavlik/wiiuse'&gt;Github du projet&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='http://www.vrac.iastate.edu/vancegroup/docs/wiiuse/index.html'&gt;Documentation de WiiUse&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id='code_source_et_compilation'&gt;Code source et compilation&lt;/h4&gt;
-
-&lt;p&gt;J&amp;#8217;ai utilisé Code::Blocks pour écrire mon code source mais libre à vous d&amp;#8217;utiliser l&amp;#8217;IDE que vous voulez.&lt;/p&gt;
-
-&lt;p&gt;Créer un nouveau projet &amp;#8220;Console application&amp;#8221; et ajoutez y les fichiers &lt;em&gt;.h&lt;/em&gt; et &lt;em&gt;.c&lt;/em&gt; de la librairie que vous avez téléchargé. Pour mon cas, j&amp;#8217;ai préféré créer un dossier libs/ qui contient l&amp;#8217;ensemble de la librairie.&lt;/p&gt;
-
-&lt;p&gt;Ensuite copié le code présent sur ce &lt;a href='http://pastebin.com/57X5Dhqy'&gt;pastebin&lt;/a&gt; dans votre &lt;em&gt;main.c&lt;/em&gt;. J&amp;#8217;avoue avant de recevoir des remarques; le code source est en grande partie copié/collé. J&amp;#8217;étais pressé de faire fonctionner mon affaire. Dans un avenir proche, je vais écrire mon propre code source en fonction de mon application.&lt;/p&gt;
-
-&lt;p&gt;Votre main.c est prêt ? Super mais ne compilez pas ! Du moins, pas avec Code::Blocks. Vous allez avoir des erreurs pénibles à résoudre. En faite, durant la compilation il faut ajouter l&amp;#8217;argument &amp;#8221;&lt;strong&gt;-lbluetooth&lt;/strong&gt;&amp;#8221;. J&amp;#8217;ai cherché et essayé des choses sans succès. La solution que j&amp;#8217;ai trouvé la plus simple a été de compiler mon projet à l&amp;#8217;aide de GCC dans un terminal. C&amp;#8217;était ma vrai première fois et comprendre comment le configurer n&amp;#8217;a pas été très simple (mais, comme on dit, c&amp;#8217;est en cherchant que l&amp;#8217;on apprend).&lt;/p&gt;
-
-&lt;p&gt;Si vous êtes prêt à compiler, allez dans un terminal et placez vous dans le dossier de votre projet. Ecrivez &lt;strong&gt;gcc -o nomDeMonPgr main.c libs/*.c libs/*.h -lbluetooth -lm&lt;/strong&gt;. Cette ligne va compiler votre main.c ainsi que ses librairies et créer un exécutable &amp;#8220;nomDeMonPgr&amp;#8221;. Là où j&amp;#8217;ai perdu pas mal de temps, c&amp;#8217;est qu&amp;#8217;il faut ajouter tous les .c et .h du projet dans la ligne de commande de gcc. Il faut aussi ajouter les librairies Linux utilisées (bluetooth et math) à l&amp;#8217;aide des deux derniers arguments passés à gcc.&lt;/p&gt;
-
-&lt;p&gt;Lancer votre application : &lt;strong&gt;./nomDeMonPgr&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Vous devriez voir ceci dans votre terminal : &lt;br /&gt; &lt;span class='source-code'&gt;
-wiiuse v0.12 loaded.&lt;br /&gt;
-By: Michael Laforest thepara[at]gmail{dot}com&lt;br /&gt;
-http://wiiuse.net  http://wiiuse.sf.net&lt;br /&gt;
-Wiimote Basic Test&lt;br /&gt;
-[INFO] Found 1 bluetooth device(s).&lt;br /&gt;
-[INFO] Found wiimote (00:1E:35:2F:34:FA) [id 1].&lt;br /&gt;
-[INFO] Connected to wiimote [id 1].&lt;br /&gt;
-Connected to 1 wiimotes (of 1 found).&lt;br /&gt;
-[INFO] wiiuse clean up...
-&lt;/span&gt;&lt;br /&gt; Et normalement votre Wiimote a du vibrer 200ms et rester allumée 10s avec le voyant numéro 1 brillant de mille feux.&lt;/p&gt;
-
-&lt;p&gt;Si jusqu&amp;#8217;à là vous avez les mêmes résultats que moi, c&amp;#8217;est que vous avez les bases nécessaires pour commencer un projet avec une Wiimote. C&amp;#8217;est d&amp;#8217;ailleurs ce que je vais faire dans peu de temps. Si vous n&amp;#8217;avez pas eu de chance et que ça ne fonctionne pas comme vous le voulez, postez votre problème en commentaire. J&amp;#8217;ai peut être la réponse étant donné que j&amp;#8217;ai passé un après midi entier dessus pour que ça fonctionne ;).&lt;/p&gt;
-
-&lt;p&gt;En espérant que ces notes vous ont été utiles, à bientôt.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Node.js c'est cool</title>
+   <title>NodeJS c'est cool</title>
    <link href="http://dgetux.github.com/Informatique/2013/01/14/nodejs-cest-cool"/>
    <updated>2013-01-14T00:00:00+01:00</updated>
    <id>http://dgetux.github.com/Informatique/2013/01/14/nodejs-cest-cool</id>
-   <content type="html">&lt;p&gt;Et si je prenais le temps de vous présenter ce qui occupe mes journées en ce moment ? Let&amp;#8217;s go, je vais vous présenter Node.js.&lt;/p&gt;
-&lt;img src='/data/nodejs_logo.png' style='width: 220px; float: right; margin-left: 15px; margin-bottom: 15px;' title='Logo de Node.js' /&gt;
-&lt;h4 id='nodejs_cest_quoi_'&gt;Node.js c&amp;#8217;est quoi ?&lt;/h4&gt;
+   <content type="html">&lt;p&gt;Et si je prenais le temps de vous présenter ce qui occupe mes journées en ce moment ? Let&amp;#8217;s go, je vais vous présenter NodeJS.&lt;/p&gt;
+&lt;img src='/data/nodejs_logo.png' style='width: 220px; float: right; margin-left: 15px; margin-bottom: 15px;' title='Logo de NodeJS' /&gt;
+&lt;h4 id='nodejs_cest_quoi_'&gt;NodeJS c&amp;#8217;est quoi ?&lt;/h4&gt;
 
-&lt;p&gt;Node.js c&amp;#8217;est une application qui tourne côté serveur afin d&amp;#8217;exécuter du code JavaScript. Vous avez donc la possibilité (et c&amp;#8217;est ce vers quoi Node.js est orienté) de faire des sites internets avec du code JavaScript côté client et côté serveur. C&amp;#8217;est à dire que côté serveur vous n&amp;#8217;utiliserez plus de PHP (ou autre), vous programmerez en &lt;strong&gt;JavaScript&lt;/strong&gt; !&lt;/p&gt;
+&lt;p&gt;NodeJS c&amp;#8217;est une application qui tourne côté serveur afin d&amp;#8217;exécuter du code JavaScript. Vous avez donc la possibilité (et c&amp;#8217;est ce vers quoi NodeJS est orienté) de faire des sites internets avec du code JavaScript côté client et côté serveur. C&amp;#8217;est à dire que côté serveur vous n&amp;#8217;utiliserez plus de PHP (ou autre), vous programmerez en &lt;strong&gt;JavaScript&lt;/strong&gt; !&lt;/p&gt;
 &lt;!-- break --&gt;
 &lt;p&gt;Le JavaScript va vous offrir de nombreux avantages qui seront peut être des inconvénients pour certain. Vous allez devoir créer le serveur web de toute pièce : configurer les options du serveur, gérer les requêtes envoyées par le client et envoyer au client les informations dont il a besoin.&lt;/p&gt;
 
 &lt;p&gt;Cette lourde tâche, de devoir créer le serveur de toute pièce, nous offre un avantage majeur. Le JavaScript étant un langage événementiel, il nous permet de créer des sites internet très rapide car il n&amp;#8217;y a pas de code bloquant. Un exemple pour bien comprendre l&amp;#8217;idée : Quand vous allez chercher des données dans une base de données, vous utilisez du code bloquant. Le serveur ne peut rien faire d&amp;#8217;autre pendant ce temps. Avec une &lt;strong&gt;fonction de callback&lt;/strong&gt;, nous pouvons nous décharger de ce travail de recherche et la donner à une tâche qui tourne en fond. Pendant qu&amp;#8217;elle réalise son travail, nous pouvons faire autre chose, tel que s&amp;#8217;occuper d&amp;#8217;un nouveau client qui vient de se connecter.&lt;/p&gt;
 
-&lt;p&gt;Il y a de nombreuses descriptions sur internet qui sont plus complètes que la mienne et je vous invite à aller les lires. Il y a ce &lt;a href='http://nodejs.developpez.com/tutoriels/javascript/node-js-livre-debutant/'&gt;Livre du Débutant&lt;/a&gt;, avec sa version PDF, qui m&amp;#8217;a permis d&amp;#8217;en apprendre beaucoup sur Node.js.&lt;/p&gt;
+&lt;p&gt;Il y a de nombreuses descriptions sur internet qui sont plus complètes que la mienne et je vous invite à aller les lires. Il y a ce &lt;a href='http://nodejs.developpez.com/tutoriels/javascript/node-js-livre-debutant/'&gt;Livre du Débutant&lt;/a&gt;, avec sa version PDF, qui m&amp;#8217;a permis d&amp;#8217;en apprendre beaucoup sur NodeJS.&lt;/p&gt;
 
 &lt;h4 id='avant_de_commencer'&gt;Avant de commencer&lt;/h4&gt;
 
-&lt;p&gt;Je ne vais pas vous présenter en détail comment programmer en utilisant node.js. Je vais plutôt vous rediriger vers les pages qui m&amp;#8217;ont permis d&amp;#8217;apprendre comment faire en y ajoutant les conseils que j&amp;#8217;aurai aimé avoir quand j&amp;#8217;étais à votre place.&lt;/p&gt;
+&lt;p&gt;Je ne vais pas vous présenter en détail comment programmer en utilisant NodeJS. Je vais plutôt vous rediriger vers les pages qui m&amp;#8217;ont permis d&amp;#8217;apprendre comment faire en y ajoutant les conseils que j&amp;#8217;aurai aimé avoir quand j&amp;#8217;étais à votre place.&lt;/p&gt;
 
 &lt;h4 id='on_commence_quand_'&gt;On commence quand ?&lt;/h4&gt;
 
-&lt;p&gt;Déjà vous allez devoir l&amp;#8217;installer. Vous trouverez sur internet de nombreux sites qui l&amp;#8217;explique. En général l&amp;#8217;installation est très simple. De plus si vous travaillez sous Ubuntu ou sous ArchLinux, Node.js est dans les dépôts. Un simple &lt;em&gt;sudo apt-get install nodejs&lt;/em&gt; sous Ubuntu ou un &lt;em&gt;yaourt -S nodejs&lt;/em&gt; sous ArchLinux vous installera votre précieux.&lt;/p&gt;
+&lt;p&gt;Déjà vous allez devoir l&amp;#8217;installer. Vous trouverez sur internet de nombreux sites qui l&amp;#8217;explique. En général l&amp;#8217;installation est très simple. De plus si vous travaillez sous Ubuntu ou sous ArchLinux, NodeJS est dans les dépôts. Un simple &lt;em&gt;sudo apt-get install nodejs&lt;/em&gt; sous Ubuntu ou un &lt;em&gt;yaourt -S nodejs&lt;/em&gt; sous ArchLinux vous installera votre précieux.&lt;/p&gt;
 
-&lt;p&gt;Maintenant que vous avez Node.js, commençons par une application simple.&lt;/p&gt;
+&lt;p&gt;Maintenant que vous avez NodeJS, commençons par une application simple.&lt;/p&gt;
 
 &lt;h5 id='hello_world'&gt;Hello World!&lt;/h5&gt;
 
-&lt;p&gt;Le meilleur moyen de vraiment se rendre compte de l&amp;#8217;intérêt de Node.js, c&amp;#8217;est de faire une mini application &amp;#8220;Hello World&amp;#8221; avec un appel de fonction en callback.&lt;/p&gt;
+&lt;p&gt;Le meilleur moyen de vraiment se rendre compte de l&amp;#8217;intérêt de NodeJS, c&amp;#8217;est de faire une mini application &amp;#8220;Hello World&amp;#8221; avec un appel de fonction en callback.&lt;/p&gt;
 
 &lt;p&gt;Je vous conseil donc de faire un fichier server.js et d&amp;#8217;y écrire le code suivant :&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;setTimeout(function(){console.log(&amp;#8220;World&amp;#8221;);}, 1000);&lt;/em&gt;&lt;br /&gt; &lt;em&gt;console.log(&amp;#8220;Hello &amp;#8220;);&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Lancer votre serveur à l&amp;#8217;aide de la ligne de commande &lt;em&gt;node server.js&lt;/em&gt; et vous devriez voir apparaitre dans votre console &amp;#8220;Hello&amp;#8221; et une seconde après &amp;#8220;World&amp;#8221;. Ce qui est important à comprendre c&amp;#8217;est que durant la seconde d&amp;#8217;attente, nous pouvons faire autre chose. On appel cela du &amp;#8220;Non blocking code&amp;#8221; et c&amp;#8217;est un des principaux avantages de Node.js.&lt;/p&gt;
+&lt;p&gt;Lancer votre serveur à l&amp;#8217;aide de la ligne de commande &lt;em&gt;node server.js&lt;/em&gt; et vous devriez voir apparaitre dans votre console &amp;#8220;Hello&amp;#8221; et une seconde après &amp;#8220;World&amp;#8221;. Ce qui est important à comprendre c&amp;#8217;est que durant la seconde d&amp;#8217;attente, nous pouvons faire autre chose. On appel cela du &amp;#8220;Non blocking code&amp;#8221; et c&amp;#8217;est un des principaux avantages de NodeJS.&lt;/p&gt;
 
 &lt;p&gt;Si vous ne comprennez pas cet exemple, je vous conseil vivement de lire quelques tutoriels sur les bases du JavaScript.&lt;/p&gt;
 
 &lt;h4 id='les_modules_complmentaires'&gt;Les modules complémentaires&lt;/h4&gt;
 
-&lt;p&gt;Avec Node.js, il est simple de travailler avec des modules. Je vais vous présenter tout ça en vous expliquant comment utiliser mon préféré, &lt;a href='http://socket.io/'&gt;Socket.IO&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Avec NodeJS, il est simple de travailler avec des modules. Je vais vous présenter tout ça en vous expliquant comment utiliser mon préféré, &lt;a href='http://socket.io/'&gt;Socket.IO&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h5 id='a_quoi_sert_socketio_'&gt;A quoi sert Socket.IO ?&lt;/h5&gt;
 
@@ -154,7 +67,7 @@ Connected to 1 wiimotes (of 1 found).&lt;br /&gt;
 
 &lt;h5 id='installation_et_utilisation_du_module'&gt;Installation et utilisation du module&lt;/h5&gt;
 
-&lt;p&gt;Dans un premier temps il faut installer &lt;a href='https://npmjs.org/'&gt;npm&lt;/a&gt;. C&amp;#8217;est un gestionnaire de modules pour Node.js. Il permet de gérer l&amp;#8217;installation et la désinstallation des modules très facilement.&lt;/p&gt;
+&lt;p&gt;Dans un premier temps il faut installer &lt;a href='https://npmjs.org/'&gt;npm&lt;/a&gt;. C&amp;#8217;est un gestionnaire de modules pour NodeJS. Il permet de gérer l&amp;#8217;installation et la désinstallation des modules très facilement.&lt;/p&gt;
 
 &lt;p&gt;Après son installation vous pourrez utiliser ces lignes de commande :&lt;/p&gt;
 
@@ -172,7 +85,7 @@ Connected to 1 wiimotes (of 1 found).&lt;br /&gt;
 
 &lt;h4 id='ok_et_aprs_'&gt;Ok et après ?&lt;/h4&gt;
 
-&lt;p&gt;Node.js est encore jeune et il y a beaucoup à y découvrir. Ce que je vous propose (pas vraiment une proposition en faite), c&amp;#8217;est que je vais continuer ma découverte de Node.js et réaliser un petit projet de jeu en ligne.&lt;/p&gt;
+&lt;p&gt;NodeJS est encore jeune et il y a beaucoup à y découvrir. Ce que je vous propose (pas vraiment une proposition en faite), c&amp;#8217;est que je vais continuer ma découverte de NodeJS et réaliser un petit projet de jeu en ligne.&lt;/p&gt;
 
 &lt;p&gt;Je vous invite à faire de même.&lt;/p&gt;
 

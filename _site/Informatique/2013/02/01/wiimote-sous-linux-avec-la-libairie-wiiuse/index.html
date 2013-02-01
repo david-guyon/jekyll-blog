@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="author" content="David Guyon" />
+    <title>Wiimote sous Linux avec la lib WiiUse</title>
+
+    <link rel="stylesheet" href="/assets/themes/dinky/css/styles.css">
+    <link rel="stylesheet" href="/assets/themes/dinky/css/pygment_trac.css">
+    <script src="/assets/themes/dinky/js/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="icon" type="image/png" href="/data/favicon.png" />
+
+    
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-123-12']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header"><a href="/">Mon Blog</a></h1>
+        <p class="header">Attention, David parle !</p>
+        <ul>
+          
+          
+          
+
+
+  
+    
+      
+      	
+      	<li><a href="/about.html">About David</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Anciens Articles</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+
+        </ul>
+        
+        
+        <div class="misc vcard">
+          <h4>about</h4>
+          <ul>
+            <!--
+            
+            <li class="contact"><address><span class="author fn n">David Guyon</span> - <span class="fn email">davidguyon49@gmail.com</span></address></li>
+            
+            -->
+            
+            <li class="website"><a href="http://www.songaccoustic.fr/" rel="me" style="font-weight: bold;" >SongAccoustic</a></li>
+            
+            
+            <li class="github"><a href="http://github.com/dgetux/" rel="me">github.com/dgetux</a></li>
+            
+            
+            <li class="twitter"><a href="http://twitter.com/dgetux/" rel="me">twitter.com/dgetux</a></li>
+            
+            
+            <li class="facebook"><a href="http://facebook.com/GuyonDavid/" rel="me">FB.com/GuyonDavid</a></li>
+            
+            
+            
+            
+            
+            <li class="lastfm"><a href="http://lastfm.fr/user/misterchimiz" rel="me">lastfm.fr/misterchimiz</a></li>
+            
+          </ul>
+        </div><!-- misc -->
+        
+      </header>
+
+      <section>
+      
+
+<section>
+  <h1>Wiimote sous Linux avec la lib WiiUse</h1>
+
+  <img src='/data/wiimoteWindows.jpg' style='width: 300px; float: right; margin-left: 15px; margin-bottom: 15px;' title='Wiimote sous Windows' />
+<p>Je m&#8217;étais déjà amusé à écrire un petit programme qui récupére les données échangées entre mon PC et ma manette filaire de 360. C&#8217;était drôle mais je voulais plus de fun et j&#8217;avais toujours voulu essayer avec une Wiimote.</p>
+
+<p>C&#8217;est, à présent, chose faite puisque je viens de réussir à l&#8217;instant à faire un programme en C qui relie ma Wiimote à mon PC.</p>
+
+<p>Je vais vous expliquer en détail comment j&#8217;ai fait car la tâche n&#8217;a pas été simple.</p>
+<!-- break -->
+<h4 id='avant_de_commencer'>Avant de commencer</h4>
+
+<p>Il va vous falloir une Wiimote (avec ou sans Nunchuk) ainsi qu&#8217;une clef Bluetooth.</p>
+
+<p>Il faut savoir que je suis sous ArchLinux (distribution Linux). Si vous êtes sous Ubuntu (ou autre), il ne devrait pas y avoir de problème. Tout ce qu&#8217;il vous faut c&#8217;est s&#8217;assurer que <strong>bluez</strong> est installé.</p>
+
+<p>lien utile : <a href='https://wiki.archlinux.org/index.php/Wiimote'>ArchLinux - wiki : Wiimote</a></p>
+
+<p>Si tu es sous Windows, ça devrait fonctionner mais ça reste à vérifier. La librairie que nous allons utiliser est compatible WIN32 (c&#8217;est ce que j&#8217;en ai déduit quand lu le code source de la librairie).</p>
+
+<h5 id='essayons_voir_si_a_marche'>Essayons voir si ça marche</h5>
+
+<p>Ouvre ton terminal préféré et lance : &#8221;<em>hcitool scan</em>&#8221;. Appui sur les boutons &#8220;1&#8221; et &#8220;2&#8221; de la Wiimote afin d&#8217;effectuer une recherche. Si tout se passe bien, tu devrais avoir quelque chose comme ça :<br /> <span class='source-code'>
+Scanning ...<br />
+00:1E:35:2F:34:FA	Nintendo RVL-CNT-01
+</span></p>
+
+<h5 id='essayons_quelque_chose_de_plus_drle'>Essayons quelque chose de plus drôle</h5>
+
+<p>Dans le même terminal, lance : &#8221;<em>sudo wminput</em>&#8221;. Appui sur &#8220;1&#8221; et &#8220;2&#8221; et tu devrais voir ceci dans la console :<br /> <span class='source-code'>
+Put Wiimote in discoverable mode now (press 1+2)...<br />
+Ready.
+</span></p>
+
+<p>Maintenant bouge ta Wiimote ! Héhé, non tu ne rêves pas. Tu peux effectivement contrôler la souris de ton PC avec ta Wiimote. Tu vas vite te rendre compte que c&#8217;est pas pratique mais c&#8217;est tout de même une bonne avancé. Il ne nous reste qu&#8217;à utiliser tout ceci dans un projet personnel avec un but plus intéressant.</p>
+
+<p><em>Pour quitter wminput, un Ctrl+c dans la console va tuer le processus.</em></p>
+
+<p>Attaquons nous maintenant au plus intéressant, le code source !</p>
+
+<h4 id='la_librairie_wiiuse'>La librairie WiiUse</h4>
+
+<p>Pour commencer, nous allons avoir besoin d&#8217;une librairie. J&#8217;ai trouvé la librairie <strong>WiiUse</strong> qui me parrait bien par sa taille, sa compatibilité Linux/Windows et le fait qu&#8217;elle soit simple et complète à la fois.</p>
+
+<h5 id='liens'>Liens</h5>
+
+<ul>
+<li><a href='http://sourceforge.net/projects/wiiuse/files/wiiuse/'>Page de téléchargement de la librairie</a></li>
+
+<li><a href='https://github.com/rpavlik/wiiuse'>Github du projet</a></li>
+
+<li><a href='http://www.vrac.iastate.edu/vancegroup/docs/wiiuse/index.html'>Documentation de WiiUse</a></li>
+</ul>
+
+<h4 id='code_source_et_compilation'>Code source et compilation</h4>
+
+<p>J&#8217;ai utilisé Code::Blocks pour écrire mon code source mais libre à vous d&#8217;utiliser l&#8217;IDE que vous voulez.</p>
+
+<p>Créer un nouveau projet &#8220;Console application&#8221; et ajoutez y les fichiers <em>.h</em> et <em>.c</em> de la librairie que vous avez téléchargé. Pour mon cas, j&#8217;ai préféré créer un dossier libs/ qui contient l&#8217;ensemble de la librairie.</p>
+
+<p>Ensuite copié le code présent sur ce <a href='http://pastebin.com/57X5Dhqy'>pastebin</a> dans votre <em>main.c</em>. J&#8217;avoue avant de recevoir des remarques; le code source est en grande partie copié/collé. J&#8217;étais pressé de faire fonctionner mon affaire. Dans un avenir proche, je vais écrire mon propre code source en fonction de mon application.</p>
+
+<p>Votre main.c est prêt ? Super mais ne compilez pas ! Du moins, pas avec Code::Blocks. Vous allez avoir des erreurs pénibles à résoudre. En faite, durant la compilation il faut ajouter l&#8217;argument &#8221;<strong>-lbluetooth</strong>&#8221;. J&#8217;ai cherché et essayé des choses sans succès. La solution que j&#8217;ai trouvé la plus simple a été de compiler mon projet à l&#8217;aide de GCC dans un terminal. C&#8217;était ma vrai première fois et comprendre comment le configurer n&#8217;a pas été très simple (mais, comme on dit, c&#8217;est en cherchant que l&#8217;on apprend).</p>
+
+<p>Si vous êtes prêt à compiler, allez dans un terminal et placez vous dans le dossier de votre projet. Ecrivez <strong>gcc -o nomDeMonPgr main.c libs/*.c libs/*.h -lbluetooth -lm</strong>. Cette ligne va compiler votre main.c ainsi que ses librairies et créer un exécutable &#8220;nomDeMonPgr&#8221;. Là où j&#8217;ai perdu pas mal de temps, c&#8217;est qu&#8217;il faut ajouter tous les .c et .h du projet dans la ligne de commande de gcc. Il faut aussi ajouter les librairies Linux utilisées (bluetooth et math) à l&#8217;aide des deux derniers arguments passés à gcc.</p>
+
+<p>Lancer votre application : <strong>./nomDeMonPgr</strong></p>
+
+<p>Vous devriez voir ceci dans votre terminal : <br /> <span class='source-code'>
+wiiuse v0.12 loaded.<br />
+By: Michael Laforest thepara[at]gmail{dot}com<br />
+http://wiiuse.net  http://wiiuse.sf.net<br />
+Wiimote Basic Test<br />
+[INFO] Found 1 bluetooth device(s).<br />
+[INFO] Found wiimote (00:1E:35:2F:34:FA) [id 1].<br />
+[INFO] Connected to wiimote [id 1].<br />
+Connected to 1 wiimotes (of 1 found).<br />
+[INFO] wiiuse clean up...
+</span><br /> Et normalement votre Wiimote a du vibrer 200ms et rester allumée 10s avec le voyant numéro 1 brillant de mille feux.</p>
+
+<p>Si jusqu&#8217;à là vous avez les mêmes résultats que moi, c&#8217;est que vous avez les bases nécessaires pour commencer un projet avec une Wiimote. C&#8217;est d&#8217;ailleurs ce que je vais faire dans peu de temps. Si vous n&#8217;avez pas eu de chance et que ça ne fonctionne pas comme vous le voulez, postez votre problème en commentaire. J&#8217;ai peut être la réponse étant donné que j&#8217;ai passé un après midi entier dessus pour que ça fonctionne ;).</p>
+
+<p>En espérant que ces notes vous ont été utiles, à bientôt.</p>
+
+  
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+    var disqus_shortname = 'dgetuxblog'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+</section>
+
+
+      </section>
+
+      <footer>
+        <!-- EMPTY -->
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
+
