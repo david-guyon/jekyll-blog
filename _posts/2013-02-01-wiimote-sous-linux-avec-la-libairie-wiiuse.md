@@ -29,19 +29,19 @@ Si tu es sous Windows, ça devrait fonctionner mais ça reste à vérifier. La l
 
 #####Essayons voir si ça marche
 
-Ouvre ton terminal préféré et lance : "*hcitool scan*". Appui sur les boutons "1" et "2" de la Wiimote afin d'effectuer une recherche. Si tout se passe bien, tu devrais avoir quelque chose comme ça :<br>
-<span class="source-code">
-Scanning ...<br>
+Ouvre ton terminal préféré et lance : "*hcitool scan*". Appui sur les boutons "1" et "2" de la Wiimote afin d'effectuer une recherche. Si tout se passe bien, tu devrais avoir quelque chose comme ça :
+<pre>
+Scanning ...
 00:1E:35:2F:34:FA	Nintendo RVL-CNT-01
-</span>
+</pre>
 
 #####Essayons quelque chose de plus drôle
 
-Dans le même terminal, lance : "*sudo wminput*". Appui sur "1" et "2" et tu devrais voir ceci dans la console :<br>
-<span class="source-code">
-Put Wiimote in discoverable mode now (press 1+2)...<br>
+Dans le même terminal, lance : "*sudo wminput*". Appui sur "1" et "2" et tu devrais voir ceci dans la console :
+<pre>
+Put Wiimote in discoverable mode now (press 1+2)...
 Ready.
-</span>
+</pre>
 
 
 Maintenant bouge ta Wiimote ! Héhé, non tu ne rêves pas. Tu peux effectivement contrôler la souris de ton PC avec ta Wiimote. Tu vas vite te rendre compte que c'est pas pratique mais c'est tout de même une bonne avancé. Il ne nous reste qu'à utiliser tout ceci dans un projet personnel avec un but plus intéressant. 
@@ -74,18 +74,18 @@ Cette ligne va compiler votre main.c ainsi que ses librairies et créer un exéc
 
 Lancer votre application : **./nomDeMonPgr**
 
-Vous devriez voir ceci dans votre terminal : <br>
-<span class="source-code">
-wiiuse v0.12 loaded.<br>
-By: Michael Laforest thepara[at]gmail{dot}com<br>
-http://wiiuse.net  http://wiiuse.sf.net<br>
-Wiimote Basic Test<br>
-[INFO] Found 1 bluetooth device(s).<br>
-[INFO] Found wiimote (00:1E:35:2F:34:FA) [id 1].<br>
-[INFO] Connected to wiimote [id 1].<br>
-Connected to 1 wiimotes (of 1 found).<br>
+Vous devriez voir ceci dans votre terminal : 
+<pre>
+wiiuse v0.12 loaded.
+By: Michael Laforest thepara[at]gmail{dot}com
+http://wiiuse.net  http://wiiuse.sf.net
+Wiimote Basic Test
+[INFO] Found 1 bluetooth device(s).
+[INFO] Found wiimote (00:1E:35:2F:34:FA) [id 1].
+[INFO] Connected to wiimote [id 1].
+Connected to 1 wiimotes (of 1 found).
 [INFO] wiiuse clean up...
-</span><br>
+</pre>
 Et normalement votre Wiimote a du vibrer 200ms et rester allumée 10s avec le voyant numéro 1 brillant de mille feux. 
 
 Si jusqu'à là vous avez les mêmes résultats que moi, c'est que vous avez les bases nécessaires pour commencer un projet avec une Wiimote. C'est d'ailleurs ce que je vais faire dans peu de temps. 
