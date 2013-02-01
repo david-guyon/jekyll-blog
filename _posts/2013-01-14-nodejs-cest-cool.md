@@ -1,19 +1,19 @@
 ---
 layout: post
-title: "NodeJS c'est cool"
-description: "Premier pas avec NodeJS"
+title: "Node.js c'est cool"
+description: "Premier pas avec Node.js"
 category: Informatique 
-tags: [NodeJS]
+tags: [JS, Web, Node.js]
 ---
 {% include JB/setup %}
 
-Et si je prenais le temps de vous présenter ce qui occupe mes journées en ce moment ? Let's go, je vais vous présenter NodeJS.
+Et si je prenais le temps de vous présenter ce qui occupe mes journées en ce moment ? Let's go, je vais vous présenter Node.js.
 
-<img src="{{BASE_PATH}}/data/nodejs_logo.png" title="Logo de NodeJS" style="width: 220px; float: right; margin-left: 15px; margin-bottom: 15px;"/>
+<img src="{{BASE_PATH}}/data/nodejs_logo.png" title="Logo de Node.js" style="width: 220px; float: right; margin-left: 15px; margin-bottom: 15px;"/>
 
-####NodeJS c'est quoi ?
+####Node.js c'est quoi ?
 
-NodeJS c'est une application qui tourne côté serveur afin d'exécuter du code JavaScript. Vous avez donc la possibilité (et c'est ce vers quoi NodeJS est orienté) de faire des sites internets avec du code JavaScript côté client et côté serveur. C'est à dire que côté serveur vous n'utiliserez plus de PHP (ou autre), vous programmerez en **JavaScript** !
+Node.js c'est une application qui tourne côté serveur afin d'exécuter du code JavaScript. Vous avez donc la possibilité (et c'est ce vers quoi Node.js est orienté) de faire des sites internets avec du code JavaScript côté client et côté serveur. C'est à dire que côté serveur vous n'utiliserez plus de PHP (ou autre), vous programmerez en **JavaScript** !
 
 <!-- break -->
 
@@ -21,22 +21,22 @@ Le JavaScript va vous offrir de nombreux avantages qui seront peut être des inc
 
 Cette lourde tâche, de devoir créer le serveur de toute pièce, nous offre un avantage majeur. Le JavaScript étant un langage événementiel, il nous permet de créer des sites internet très rapide car il n'y a pas de code bloquant. Un exemple pour bien comprendre l'idée : Quand vous allez chercher des données dans une base de données, vous utilisez du code bloquant. Le serveur ne peut rien faire d'autre pendant ce temps. Avec une **fonction de callback**, nous pouvons nous décharger de ce travail de recherche et la donner à une tâche qui tourne en fond. Pendant qu'elle réalise son travail, nous pouvons faire autre chose, tel que s'occuper d'un nouveau client qui vient de se connecter. 
 
-Il y a de nombreuses descriptions sur internet qui sont plus complètes que la mienne et je vous invite à aller les lires. Il y a ce [Livre du Débutant](http://nodejs.developpez.com/tutoriels/javascript/node-js-livre-debutant/), avec sa version PDF, qui m'a permis d'en apprendre beaucoup sur NodeJS. 
+Il y a de nombreuses descriptions sur internet qui sont plus complètes que la mienne et je vous invite à aller les lires. Il y a ce [Livre du Débutant](http://nodejs.developpez.com/tutoriels/javascript/node-js-livre-debutant/), avec sa version PDF, qui m'a permis d'en apprendre beaucoup sur Node.js. 
 
 ####Avant de commencer
 
-Je ne vais pas vous présenter en détail comment programmer en utilisant NodeJS. Je vais plutôt vous rediriger vers les pages qui m'ont permis d'apprendre comment faire en y ajoutant les conseils que j'aurai aimé avoir quand j'étais à votre place. 
+Je ne vais pas vous présenter en détail comment programmer en utilisant node.js. Je vais plutôt vous rediriger vers les pages qui m'ont permis d'apprendre comment faire en y ajoutant les conseils que j'aurai aimé avoir quand j'étais à votre place. 
 
 ####On commence quand ?
 
-Déjà vous allez devoir l'installer. Vous trouverez sur internet de nombreux sites qui l'explique. En général l'installation est très simple. De plus si vous travaillez sous Ubuntu ou sous ArchLinux, NodeJS est dans les dépôts. 
+Déjà vous allez devoir l'installer. Vous trouverez sur internet de nombreux sites qui l'explique. En général l'installation est très simple. De plus si vous travaillez sous Ubuntu ou sous ArchLinux, Node.js est dans les dépôts. 
 Un simple *sudo apt-get install nodejs* sous Ubuntu ou un *yaourt -S nodejs* sous ArchLinux vous installera votre précieux. 
 
-Maintenant que vous avez NodeJS, commençons par une application simple. 
+Maintenant que vous avez Node.js, commençons par une application simple. 
 
 #####Hello World!
 
-Le meilleur moyen de vraiment se rendre compte de l'intérêt de NodeJS, c'est de faire une mini application "Hello World" avec un appel de fonction en callback. 
+Le meilleur moyen de vraiment se rendre compte de l'intérêt de Node.js, c'est de faire une mini application "Hello World" avec un appel de fonction en callback. 
 
 Je vous conseil donc de faire un fichier server.js et d'y écrire le code suivant : 
 
@@ -44,13 +44,13 @@ Je vous conseil donc de faire un fichier server.js et d'y écrire le code suivan
 *console.log("Hello ");*
 
 Lancer votre serveur à l'aide de la ligne de commande *node server.js* et vous devriez voir apparaitre dans votre console "Hello" et une seconde après "World". 
-Ce qui est important à comprendre c'est que durant la seconde d'attente, nous pouvons faire autre chose. On appel cela du "Non blocking code" et c'est un des principaux avantages de NodeJS. 
+Ce qui est important à comprendre c'est que durant la seconde d'attente, nous pouvons faire autre chose. On appel cela du "Non blocking code" et c'est un des principaux avantages de Node.js. 
 
 Si vous ne comprennez pas cet exemple, je vous conseil vivement de lire quelques tutoriels sur les bases du JavaScript. 
 
 ####Les modules complémentaires
 
-Avec NodeJS, il est simple de travailler avec des modules. Je vais vous présenter tout ça en vous expliquant comment utiliser mon préféré, [Socket.IO](http://socket.io/). 
+Avec Node.js, il est simple de travailler avec des modules. Je vais vous présenter tout ça en vous expliquant comment utiliser mon préféré, [Socket.IO](http://socket.io/). 
 
 #####A quoi sert Socket.IO ?
 
@@ -60,7 +60,7 @@ Ce module permet de facilement implémenter un échange d'informations entre vot
 
 #####Installation et utilisation du module
 
-Dans un premier temps il faut installer [npm](https://npmjs.org/). C'est un gestionnaire de modules pour NodeJS. Il permet de gérer l'installation et la désinstallation des modules très facilement. 
+Dans un premier temps il faut installer [npm](https://npmjs.org/). C'est un gestionnaire de modules pour Node.js. Il permet de gérer l'installation et la désinstallation des modules très facilement. 
 
 Après son installation vous pourrez utiliser ces lignes de commande : 
 
@@ -75,7 +75,7 @@ Pour découvrir comment l'utiliser, aller sur le site de [Socket.IO](http://sock
 
 ####Ok et après ? 
 
-NodeJS est encore jeune et il y a beaucoup à y découvrir. Ce que je vous propose (pas vraiment une proposition en faite), c'est que je vais continuer ma découverte de NodeJS et réaliser un petit projet de jeu en ligne. 
+Node.js est encore jeune et il y a beaucoup à y découvrir. Ce que je vous propose (pas vraiment une proposition en faite), c'est que je vais continuer ma découverte de Node.js et réaliser un petit projet de jeu en ligne. 
 
 Je vous invite à faire de même. 
 
